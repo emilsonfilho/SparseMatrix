@@ -7,7 +7,6 @@ private:
     double value;
     Node *down;
     Node *next;
-
 public:
     /**
      * @brief Construtor padrão para a classe Node

@@ -1,7 +1,7 @@
 #include "../Includes/Node.hpp"
 
 Node::Node() : value(0), down(nullptr), next(nullptr) {}
-Node::Node(double v, Node *d = nullptr, Node *n = nullptr) : value(v), down(d), next(n) {}
+Node::Node(double v, Node *d, Node *n) : value(v), down(d), next(n) {}
 
 double Node::getValue() { return value; }
 void Node::setValue(double value) { this->value = value; }
