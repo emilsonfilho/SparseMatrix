@@ -1,4 +1,4 @@
-#include "../../Includes/CommandPattern/Invoker/InvokerCommand.hpp"
+#include "../../../Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 
 void InvokerCommand::registerCommand(const std::string& commandName, Command* command, Context context) {
     if (!context) {
