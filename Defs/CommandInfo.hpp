@@ -3,13 +3,13 @@
 
 #include <functional>
 
-#include "../Commands/Command.hpp"
-#include "../Contexts/CommandContext.hpp"
+#include "../Includes/Commands/Command.hpp"
+#include "../Includes/Contexts/ContextCommand.hpp"
 
 struct CommandInfo
 {
     Command* command;
-    std::function<CommandContext*()> contextFactory;
+    std::function<ContextCommand*()> contextFactory;
 };
 
 

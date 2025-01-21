@@ -1,10 +1,10 @@
 #ifndef COMMAND_CONTEXT_HPP
 #define COMMAND_CONTEXT_HPP
 
-class CommandContext
+class ContextCommand
 {
 public:
-    virtual ~CommandContext() = default;
+    virtual ~ContextCommand() = default;
 };
 
 #endif

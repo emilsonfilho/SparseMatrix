@@ -6,13 +6,15 @@
 #include <string>
 
 #include "../../Defs/CommandInfo.hpp"
+#include "../../Defs/UnorderedMapCommand.hpp"
+#include "../Commands/HelpCommand.hpp"
 
-using Context = std::function<CommandContext*()>;
+using Context = std::function<ContextCommand*()>;
 
-class CommandInvoker
+class InvokerCommand
 {
 private:
-    std::unordered_map<std::string, CommandInfo> commandRegistry;
+    UnorderedMapCommand commandRegistry;
 public:
     /**
      * @brief Registra um comando para que possa ser executado pelo usuário
@@ -20,7 +22,7 @@ public:
      * @param commandName Nome do comando a ser registrado
      * @param command Ponteiro para o arquivo de comando
      */
-    void registerCommand(const std::string& commandName, Command* command, Context context);
+    void registerCommand(const std::string& commandName, Command* command, Context context = nullptr);
     
     /**
      * @brief Executa o comando especificado pelo nome
@@ -28,6 +30,8 @@ public:
      * @param commandName Nome do comando a ser executado
      */
     void executeCommand(const std::string& commandName);
+
+    void showHelp();
 };
 
 #endif
