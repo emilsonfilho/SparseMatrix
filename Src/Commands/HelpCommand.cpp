@@ -1,4 +1,4 @@
-#include "../../Includes/Commands/HelpCommand.hpp"
+#include "../../Includes/CommandPattern/Commands/HelpCommand.hpp"
 
 HelpCommand::HelpCommand(const std::string& name, const std::string& description, const UnorderedMapCommand& mapCommand)
     : Command(name, description), commandRegistry(mapCommand) {}

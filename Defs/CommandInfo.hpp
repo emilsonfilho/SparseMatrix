@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "../Includes/Commands/Command.hpp"
-#include "../Includes/Contexts/ContextCommand.hpp"
+#include "../Includes/CommandPattern/Commands/Command.hpp"
+#include "../Includes/CommandPattern/Contexts/ContextCommand.hpp"
 
 struct CommandInfo
 {
