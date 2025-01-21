@@ -2,14 +2,14 @@
 #include <string>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
-#include "Includes/CommandPattern/Commands/TestCommand.hpp"
+// #include "Includes/CommandPattern/Commands/TestCommand.hpp"
 
 int main() {
     InvokerCommand invoker;
 
-    TestCommand testCommand("test", "uma funcao teste");
+    // TestCommand testCommand("test", "uma funcao teste");
 
-    invoker.registerCommand(testCommand.getName(), &testCommand);
+    // invoker.registerCommand(testCommand.getName(), &testCommand);
 
     while (true)
     {

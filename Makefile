@@ -9,12 +9,12 @@ SRC = Src
 BIN = Bin
 
 # Diretórios adicionais
-COMMANDS = Src/Commands
-CONTEXTS = Src/Contexts
-INVOKER = Src/Invoker
+COMMANDS = Src/CommandPattern/Commands
+CONTEXTS = Src/CommandPattern/Contexts
+INVOKER = Src/CommandPattern/Invoker
 
 # Objetos
-OBJ = $(BIN)/HelpCommand.o $(BIN)/Invoker.o main.o
+OBJ = $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/main.o
 
 # Regra padrão para a targt definida no final
 all: app
