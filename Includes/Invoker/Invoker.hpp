@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <string>
 
-#include "CommandInfo.hpp"
+#include "../../Defs/CommandInfo.hpp"
 
 using Context = std::function<CommandContext*()>;
 
