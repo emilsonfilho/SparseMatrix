@@ -1,4 +1,4 @@
-#include "../../Includes/Node.hpp"
+#include "../../../Includes/Classes/Node/Node.hpp"
 
 Node::Node() : value(0), down(nullptr), next(nullptr) {}
 Node::Node(double v, Node *d, Node *n) : value(v), down(d), next(n) {}
