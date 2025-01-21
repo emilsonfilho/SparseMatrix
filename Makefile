@@ -14,7 +14,7 @@ CONTEXTS = Src/Contexts
 INVOKER = Src/Invoker
 
 # Objetos
-OBJ = $(BIN)/HelpCommand.o $(BIN)/Invoker.o
+OBJ = $(BIN)/HelpCommand.o $(BIN)/Invoker.o main.o
 
 # Regra padrão para a targt definida no final
 all: app
@@ -26,8 +26,8 @@ $(BIN)/HelpCommand.o: $(COMMANDS)/HelpCommand.cpp
 $(BIN)/Invoker.o: $(INVOKER)/InvokerCommand.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
-# $(BIN)/teste.o: apptest.cpp
-# 	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(BIN)/main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Linkagem final
 app: $(OBJ)
