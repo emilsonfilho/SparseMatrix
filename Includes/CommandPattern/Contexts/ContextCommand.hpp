@@ -3,13 +3,12 @@
 
 #include <string>
 
-class ContextCommand
-{
+class ContextCommand {
 public:
-    /**
-     * @brief Destrutor do contexto
-     */
-    virtual ~ContextCommand() = default;
+  /**
+   * @brief Destrutor do contexto
+   */
+  virtual ~ContextCommand() = default;
 };
 
 #endif

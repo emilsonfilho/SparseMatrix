@@ -6,11 +6,9 @@
 #include "../Includes/CommandPattern/Commands/Command.hpp"
 #include "../Includes/CommandPattern/Contexts/ContextCommand.hpp"
 
-struct CommandInfo
-{
-    Command* command;
-    std::function<ContextCommand*()> contextFactory;
+struct CommandInfo {
+  Command *command;
+  std::function<ContextCommand *()> contextFactory;
 };
-
 
 #endif

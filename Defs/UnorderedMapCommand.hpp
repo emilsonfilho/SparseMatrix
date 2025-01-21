@@ -1,8 +1,8 @@
 #ifndef UNORDERED_MAP_COMMAND_HPP
 #define UNORDERED_MAP_COMMAND_HPP
 
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 #include "CommandInfo.hpp"
 
