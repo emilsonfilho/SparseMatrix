@@ -1,3 +1,3 @@
 #!/bin/bash
-find . -name "*.cpp" -o -name "*.h" | xargs clang-format -i
+find . -name "*.cpp" -o -name "*.hpp" | xargs clang-format -i
 echo "Formatacao concluida!"
