@@ -30,7 +30,9 @@ public:
      * @param commandName Nome do comando a ser executado
      */
     void executeCommand(const std::string& commandName);
-
+    /**
+     * @brief Função invocadora do comando especial HelpCommand
+     */
     void showHelp();
 };
 

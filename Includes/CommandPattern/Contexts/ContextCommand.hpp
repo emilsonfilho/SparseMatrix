@@ -6,6 +6,9 @@
 class ContextCommand
 {
 public:
+    /**
+     * @brief Destrutor do contexto
+     */
     virtual ~ContextCommand() = default;
 };
 
