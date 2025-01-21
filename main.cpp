@@ -5,27 +5,26 @@
 // #include "Includes/CommandPattern/Commands/TestCommand.hpp"
 
 int main() {
-    InvokerCommand invoker;
+  InvokerCommand invoker;
 
-    // TestCommand testCommand("test", "uma funcao teste");
+  // TestCommand testCommand("test", "uma funcao teste");
 
-    // invoker.registerCommand(testCommand.getName(), &testCommand);
+  // invoker.registerCommand(testCommand.getName(), &testCommand);
 
-    while (true)
-    {
-        std::string input;
-        std::getline(std::cin, input);
+  while (true) {
+    std::string input;
+    std::getline(std::cin, input);
 
-        if (input == "help") {
-            invoker.showHelp();
-        } else if (input == "exit") {
-            break;
-        } else {
-            invoker.executeCommand(input);
-        }
+    if (input == "help") {
+      invoker.showHelp();
+    } else if (input == "exit") {
+      break;
+    } else {
+      invoker.executeCommand(input);
     }
+  }
 
-    std::cout << "Até mais!" << std::endl;
+  std::cout << "Até mais!" << std::endl;
 
-    return 0;
+  return 0;
 }
