@@ -8,17 +8,22 @@ INCLUDES = Includes
 SRC = Src
 BIN = Bin
 
+CLASSES = $(SRC)/Classes
+
 # Objetos
-OBJ = $(BIN)/Node.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o
 
 # Regra padrão para a targt definida no final
 all: app
 	./app
 
-$(BIN)/Node.o: $(SRC)/Node.cpp
+$(BIN)/Node.o: $(CLASSES)/Node/Node.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
-# $(BIN)/teste.o: teste.cpp
+$(BIN)/Iterator.o: $(CLASSES)/Iterator/Iterator.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+# $(BIN)/teste.o: test.cpp
 # 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Linkagem final
