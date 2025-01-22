@@ -3,10 +3,12 @@
 
 class Node {
 private:
-  double value;
-  Node *down;
-  Node *next;
-
+  int row{0};             // Linha do elemento
+  int col{0};             // Coluna do elemento
+  int value{0};           // Valor armazenado
+  Node* nextRow{nullptr};       // Ponteiro para o próximo nó na mesma coluna
+  Node* nextCol{nullptr};       // Ponteiro para o próximo nó na mesma linha
+  
 public:
   /**
    * @brief Construtor padrão para a classe Node
