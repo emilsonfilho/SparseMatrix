@@ -6,6 +6,7 @@
 class Iterator {
 private:
   Node *pointer{nullptr};
+
 public:
   /**
    * @brief Construtor padrão que define o Iterator para nullptr
