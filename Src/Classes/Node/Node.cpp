@@ -1,7 +1,10 @@
 #include "../../../Includes/Classes/Node/Node.hpp"
 
 Node::Node() = default;
-Node::Node(double v, Node *d, Node *n) : value(v), down(d), next(n) {}
+Node::Node(int r, int c, double v, Node* d, Node *n) : row(r), col(c), value(v), down(d), next(n) {}
+
+int Node::getRow() { return row; }
+int Node::getCol() { return col; }
 
 double Node::getValue() { return value; }
 void Node::setValue(double value) { this->value = value; }
