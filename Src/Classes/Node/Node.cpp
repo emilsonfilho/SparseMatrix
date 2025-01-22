@@ -1,7 +1,8 @@
 #include "../../../Includes/Classes/Node/Node.hpp"
 
 Node::Node() = default;
-Node::Node(int r, int c, double v, Node* d, Node *n) : row(r), col(c), value(v), down(d), next(n) {}
+Node::Node(int r, int c, double v, Node *d, Node *n)
+    : row(r), col(c), value(v), down(d), next(n) {}
 
 int Node::getRow() { return row; }
 int Node::getCol() { return col; }

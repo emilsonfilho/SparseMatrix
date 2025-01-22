@@ -6,7 +6,7 @@ private:
   int row{0};
   int col{0};
   int value{0};
-  Node *down{nullptr}; 
+  Node *down{nullptr};
   Node *next{nullptr};
 
 public:
