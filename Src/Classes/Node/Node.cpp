@@ -7,7 +7,8 @@ Node::Node(int r, int c, double v, Node *d, Node *n)
 int Node::getRow() { return row; }
 int Node::getCol() { return col; }
 
-double Node::getValue() { return value; }
+double &Node::getValue() { return value; }
+const double &Node::getValue() const { return value; }
 void Node::setValue(double value) { this->value = value; }
 
 Node *Node::getDown() { return down; }
