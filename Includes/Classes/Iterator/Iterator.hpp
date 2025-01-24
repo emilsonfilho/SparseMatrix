@@ -18,6 +18,15 @@ public:
    * @param address Endereço da memória a ser apontado pelo Iterator
    */
   Iterator(Node *address);
+
+  /**
+   * @brief Retorna uma referência para o valor do nó apontado
+   */
+  double &operator*();
+  /**
+   * @brief Retorna uma referência constante para o valor do nó apontado
+   */
+  const double &operator*() const;
 };
 
 #endif
