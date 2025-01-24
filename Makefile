@@ -8,14 +8,23 @@ INCLUDES = Includes
 SRC = Src
 BIN = Bin
 
-CLASSES = $(SRC)/Classes
-
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Main.o
+CLASSES = $(SRC)/Classes
+COMMAND_PATTERN = $(SRC)/CommandPattern
 
 # Regra padrão para a targt definida no final
 all: app
 	./app
+
+$(BIN)/HelpCommand.o: $(COMMAND_PATTERN)/Commands/HelpCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/Invoker.o: $(COMMAND_PATTERN)/Invoker/InvokerCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/Main.o: Main.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BIN)/Node.o: $(CLASSES)/Node/Node.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
