@@ -18,6 +18,14 @@ public:
    * @param address Endereço da memória a ser apontado pelo Iterator
    */
   Iterator(Node *address);
+
+  /**
+   * @brief Sobrecarga do operador igualdade
+   *
+   * Dois Iteradores são considerados iguais se apontam para o mesmo endereço de
+   * memória
+   */
+  bool operator==(const Iterator &it);
 };
 
 #endif
