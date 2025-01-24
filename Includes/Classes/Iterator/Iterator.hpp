@@ -28,6 +28,14 @@ public:
    * elemetos, aponta-se para o própro sentinela
    */
   void nextInRow();
+  
+  /**
+   * @brief Sobrecarga do operador igualdade
+   *
+   * Dois Iteradores são considerados iguais se apontam para o mesmo endereço de
+   * memória
+   */
+  bool operator==(const Iterator &it);
 };
 
 #endif
