@@ -3,5 +3,9 @@
     "files.associations": {
         "sstream": "cpp",
         "xstring": "cpp"
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }
