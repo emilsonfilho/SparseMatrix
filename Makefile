@@ -9,12 +9,9 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/main.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Main.o
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
-
-# Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN):HelpCommand.o $(BIN)/Invoker.o $(BIN)/main.o
 
 # Regra padrão para a targt definida no final
 all: app
@@ -26,7 +23,7 @@ $(BIN)/HelpCommand.o: $(COMMAND_PATTERN)/Commands/HelpCommand.cpp
 $(BIN)/Invoker.o: $(COMMAND_PATTERN)/Invoker/InvokerCommand.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
-$(BIN)/main.o: main.cpp
+$(BIN)/Main.o: Main.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BIN)/Node.o: $(CLASSES)/Node/Node.cpp
