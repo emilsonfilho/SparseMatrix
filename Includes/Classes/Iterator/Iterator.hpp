@@ -71,11 +71,17 @@ public:
   bool isRowSmaller(const Iterator &it);
 
   /**
-   * @bief Verifica e o índice da coluna atual e menor do que a de outro iterador
+   * @bief Verifica se o índice da coluna atual é menor do que a de outro iterador
    * 
-   * @param it O segundo iterador de comparacao
+   * @param it O segundo iterador de comparação
    */
   bool isColBigger(const Iterator &it);
+  /**
+   * @brief Verifica se o índice da coluna atual é menor do que a de outro iterador
+   * 
+   * @param it O segundo iterador de comparação
+   */
+  bool isColSmaller(const Iterator &it);
 
   /**
    * @brief Sobrecarga do operador igualdade

@@ -26,6 +26,10 @@ bool Iterator::isColBigger(const Iterator &it) {
   return compareCols(it, std::greater<int>());
 }
 
+bool Iterator::isColSmaller(const Iterator &it) {
+  return compareCols(it, std::less<int>());
+}
+
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }
 bool Iterator::operator!=(const Iterator &it) { return pointer != it.pointer; }
 double &Iterator::operator*() { return pointer->getValue(); }
