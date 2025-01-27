@@ -8,6 +8,8 @@
 #include "../../../Defs/CommandInfo.hpp"
 #include "../../../Defs/UnorderedMapCommand.hpp"
 #include "../Commands/HelpCommand.hpp"
+#include "../../Exceptions/InvalidCommandException.hpp"
+#include "../../../Includes/Messages/Messages.hpp"
 
 using Context = std::function<ContextCommand *()>;
 
