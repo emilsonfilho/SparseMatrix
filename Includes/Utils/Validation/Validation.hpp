@@ -32,7 +32,7 @@ void verifyValidRowCol(int row, int col);
  * @param col1 Coluna 1
  * @param col2 Coluna 2
  */
-void verifySameCol(int col1, int col2);
+void verifyDifferentCol(int col1, int col2);
 } // namespace ValidationUtils
 
 #endif

@@ -22,8 +22,8 @@ void verifyValidRowCol(int row, int col) {
     throw InvalidColumnException(Messages::invalidColumnMessage(col));
 }
 
-void verifySameCol(int col1, int col2) {
-  if (areSameValues(col1, col2))
+void verifyDifferentCol(int col1, int col2) {
+  if (!areSameValues(col1, col2))
     throw DifferentColsException(Messages::differentColsMessage());
 }
 } // namespace ValidationUtils
