@@ -8,12 +8,20 @@
 
 // serve para a validação antes da criação da matriz
 namespace ValidationUtils {
-// faz a verificação da linha e coluna
-// antes da criação da matriz
+/**
+ * @brief Faz a verificação de linha e coluna antes da criação da matrix
+ * 
+ * @param row Número da linha
+ * @param col Número da coluna
+ */
 void verifyRowCol(int row, int col);
 
-// faz verificação se Node é Valido
-// vai ser implementado
+/**
+ * @brief Faz verificação se Node é válido
+ * 
+ * @param row Número da linha
+ * @param col Número da coluna
+ */
 void verifyValidRowCol(int row, int col);
 } // namespace ValidationUtils
 
