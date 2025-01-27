@@ -29,6 +29,8 @@ public:
    */
   void nextInRow();
   
+  bool isRowBigger(const Iterator& it);
+
   /**
    * @brief Sobrecarga do operador igualdade
    *
