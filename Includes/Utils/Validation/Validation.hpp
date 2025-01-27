@@ -27,7 +27,7 @@ void verifyRowCol(int row, int col);
 void verifyValidRowCol(int row, int col);
 
 /**
- * @brief Verifica se duas colunas são iguais
+ * @brief Verifica se duas colunas são diferentes
  *
  * @param col1 Coluna 1
  * @param col2 Coluna 2
