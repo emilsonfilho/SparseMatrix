@@ -1,9 +1,9 @@
 #ifndef VALIDATION_UTILS_HPP
 #define VALIDATION_UTILS_HPP
 
-#include "../../../Messages/Messages.hpp"
-#include "../../../Exceptions/InvalidColumnException.hpp"
-#include "../../../Exceptions/InvalidRowException.hpp"
+#include "../../../Includes/Messages/Messages.hpp"
+#include "../../Exceptions/InvalidColumnException.hpp"
+#include "../../Exceptions/InvalidRowException.hpp"
 #include "../../../Includes/Classes/Node/Node.hpp"
 
 // serve para a validação antes da criação da matriz 

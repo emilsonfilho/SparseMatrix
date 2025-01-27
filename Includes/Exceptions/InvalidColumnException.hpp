@@ -6,8 +6,7 @@
 
 class InvalidColumnException : public std::runtime_error {
 public:
-    explicit InvalidColumnException(const std::string& message)
-        : std::runtime_error(message) {}
+    explicit InvalidColumnException(const std::string& message);
 };
 
 #endif
