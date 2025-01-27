@@ -28,7 +28,7 @@ public:
    */
   SparseMatrix(int numRows, int numCols);
 
-  Node *getHead();
+  const Node *getHead() const;
 };
 
 #endif
