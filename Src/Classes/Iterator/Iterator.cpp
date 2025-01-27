@@ -9,3 +9,6 @@ void Iterator::nextInRow() {
 }
 
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }
+
+double &Iterator::operator*() { return pointer->getValue(); }
+const double &Iterator::operator*() const { return pointer->getValue(); }

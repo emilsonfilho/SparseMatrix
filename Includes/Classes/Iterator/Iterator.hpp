@@ -36,6 +36,15 @@ public:
    * memória
    */
   bool operator==(const Iterator &it);
+
+  /**
+   * @brief Retorna uma referência para o valor do nó apontado
+   */
+  double &operator*();
+  /**
+   * @brief Retorna uma referência constante para o valor do nó apontado
+   */
+  const double &operator*() const;
 };
 
 #endif

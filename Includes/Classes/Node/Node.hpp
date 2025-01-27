@@ -36,8 +36,16 @@ public:
 
   /**
    * @brief Retorna o valor armazenado no Node
+   *
+   * @note Versão que pode ser modificada
    */
-  double getValue();
+  double &getValue();
+  /**
+   * @brief Retorna o valor armazenado no Node
+   *
+   * @note Versão constante
+   */
+  const double &getValue() const;
   /**
    * @brief Sobrescreve o valor armazenado no Node
    *
