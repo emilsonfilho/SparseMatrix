@@ -39,7 +39,7 @@ public:
    * @note Se o iterator já apontar para o nó sentinela e não houver próximos
    * elemetos, aponta-se para o própro sentinela
    */
-  void Iterator::nextInCol();
+  void nextInCol();
 
   /**
    * @brief Sobrecarga do operador igualdade
