@@ -1,6 +1,6 @@
+#include <exception>
 #include <iostream>
 #include <string>
-#include <exception>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 // #include "Includes/CommandPattern/Commands/TestCommand.hpp"
@@ -24,11 +24,9 @@ int main() {
       } else {
         invoker.executeCommand(input);
       }
-    } catch (const std::exception& e) {
+    } catch (const std::exception &e) {
       std::cout << e.what() << " haha\n";
     }
-
-
   }
 
   std::cout << "Até mais!" << std::endl;

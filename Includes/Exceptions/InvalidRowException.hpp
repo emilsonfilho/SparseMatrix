@@ -6,7 +6,7 @@
 
 class InvalidRowException : public std::runtime_error {
 public:
-    explicit InvalidRowException(const std::string& message);
+  explicit InvalidRowException(const std::string &message);
 };
 
 #endif

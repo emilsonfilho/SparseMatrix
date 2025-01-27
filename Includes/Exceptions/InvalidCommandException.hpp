@@ -6,7 +6,7 @@
 
 class InvalidCommandException : public std::runtime_error {
 public:
-    explicit InvalidCommandException(const std::string& message);
+  explicit InvalidCommandException(const std::string &message);
 };
 
 #endif
