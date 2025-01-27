@@ -8,7 +8,13 @@ void Iterator::nextInRow() {
     pointer = pointer->getNext();
 }
 
-bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }
+void Iterator::nextInCol() {
+  if(pointer != nullptr and pointer->getDown() != pointer){
+    pointer = pointer->getDown();
+  }
+}
 
+bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer;}
+bool Iterator::operator!=(const Iterator &it) { return pointer != it.pointer;} 
 double &Iterator::operator*() { return pointer->getValue(); }
 const double &Iterator::operator*() const { return pointer->getValue(); }
