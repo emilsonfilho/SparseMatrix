@@ -1,3 +1,4 @@
+#include <exception>
 #include <iostream>
 #include <string>
 
@@ -12,15 +13,19 @@ int main() {
   // invoker.registerCommand(testCommand.getName(), &testCommand);
 
   while (true) {
-    std::string input;
-    std::getline(std::cin, input);
+    try {
+      std::string input;
+      std::getline(std::cin, input);
 
-    if (input == "help") {
-      invoker.showHelp();
-    } else if (input == "exit") {
-      break;
-    } else {
-      invoker.executeCommand(input);
+      if (input == "help") {
+        invoker.showHelp();
+      } else if (input == "exit") {
+        break;
+      } else {
+        invoker.executeCommand(input);
+      }
+    } catch (const std::exception &e) {
+      std::cout << e.what() << " haha\n";
     }
   }
 

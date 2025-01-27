@@ -10,12 +10,8 @@ void InvokerCommand::registerCommand(const std::string &commandName,
 }
 
 void InvokerCommand::executeCommand(const std::string &commandName) {
-  if (commandRegistry.find(commandName) == commandRegistry.end()) {
-    std::cout << "Comando inválido! Use o comando 'help' para listar todos os "
-                 "comandos"
-              << std::endl;
-    return;
-  }
+  if (commandRegistry.find(commandName) == commandRegistry.end())
+    throw InvalidCommandException(Messages::invalidCommandMessage());
 
   CommandInfo &info = commandRegistry[commandName];
   ContextCommand *context = info.contextFactory();

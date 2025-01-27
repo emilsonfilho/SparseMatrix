@@ -28,7 +28,7 @@ public:
    * elemetos, aponta-se para o própro sentinela
    */
   void nextInRow();
-  
+
   /**
    * @brief Sobrecarga do operador igualdade
    *

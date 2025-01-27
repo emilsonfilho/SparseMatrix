@@ -6,8 +6,12 @@
 
 class InvalidRowException : public std::runtime_error {
 public:
-    explicit InvalidRowException(const std::string& message)
-        : std::runtime_error(message) {}
+  /**
+   * @brief Cria uma exceção de linha inválida
+   * 
+   * @param message Mensagem a ser exibida
+   */
+  explicit InvalidRowException(const std::string &message);
 };
 
 #endif
