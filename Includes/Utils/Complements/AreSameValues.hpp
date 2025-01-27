@@ -3,7 +3,7 @@
 
 /**
  * @brief Verifica se dois valores inteiros são iguais
- * 
+ *
  * @param a Primeiro valor
  * @param b Segundo valor
  */

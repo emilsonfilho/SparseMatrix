@@ -50,8 +50,9 @@ public:
   bool isRowBigger(const Iterator &it);
 
   /**
-   * @brief Verifica se o índice da linha atual é menor do que a de outro iterador
-   * 
+   * @brief Verifica se o índice da linha atual é menor do que a de outro
+   * iterador
+   *
    * @param it O segundo iterador de comparação
    */
   bool isRowSmaller(const Iterator &it);
