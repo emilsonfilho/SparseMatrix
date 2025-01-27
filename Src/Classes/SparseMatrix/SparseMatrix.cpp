@@ -31,3 +31,5 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
   this->numRows = numRows;
   this->numCols = numCols;
 }
+
+Node *SparseMatrix::getHead() { return head; }

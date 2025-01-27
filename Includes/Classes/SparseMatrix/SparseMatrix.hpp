@@ -27,6 +27,8 @@ public:
    * Aqui, serão colocados apenas as alocações dos nós sentinelas
    */
   SparseMatrix(int numRows, int numCols);
+
+  Node *getHead();
 };
 
 #endif
