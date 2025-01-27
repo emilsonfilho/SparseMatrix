@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <exception>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 // #include "Includes/CommandPattern/Commands/TestCommand.hpp"
@@ -12,16 +13,22 @@ int main() {
   // invoker.registerCommand(testCommand.getName(), &testCommand);
 
   while (true) {
-    std::string input;
-    std::getline(std::cin, input);
+    try {
+      std::string input;
+      std::getline(std::cin, input);
 
-    if (input == "help") {
-      invoker.showHelp();
-    } else if (input == "exit") {
-      break;
-    } else {
-      invoker.executeCommand(input);
+      if (input == "help") {
+        invoker.showHelp();
+      } else if (input == "exit") {
+        break;
+      } else {
+        invoker.executeCommand(input);
+      }
+    } catch (const std::exception& e) {
+      std::cout << e.what() << " haha\n";
     }
+
+
   }
 
   std::cout << "Até mais!" << std::endl;
