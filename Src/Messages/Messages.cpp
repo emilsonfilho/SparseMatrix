@@ -34,6 +34,10 @@ std::string invalidCommandMessage() {
 }
 
 std::string differentColsMessage() {
-  return "Nao eh possivel comparar linhas com diferentes numero de colunas";
+  return "Nao eh possivel comparar linhas com diferentes colunas";
+}
+
+std::string differentRowsMessage() {
+  return "Nao eh possivel comparar colunas com diferentes linhas";
 }
 } // namespace Messages

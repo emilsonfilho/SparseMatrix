@@ -8,6 +8,19 @@ class Iterator {
 private:
   Node *pointer{nullptr};
 
+  template<typename Comp>
+  bool compareRows(const Iterator &it, Comp comp) {
+    ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
+
+    return comp(pointer->getRow(), it.pointer->getRow());
+  }
+
+  template <typename Comp>
+  bool compareCols(const Iterator &it, Comp comp) {
+    ValidationUtils::verifyDifferentRow(pointer->getRow(), it.pointer->getRow());
+
+    return comp(pointer->getCol(), it.pointer->getCol());
+  }
 public:
   /**
    * @brief Construtor padrão que define o Iterator para nullptr
@@ -56,6 +69,13 @@ public:
    * @param it O segundo iterador de comparação
    */
   bool isRowSmaller(const Iterator &it);
+
+  /**
+   * @bief Verifica e o índice da coluna atual e menor do que a de outro iterador
+   * 
+   * @param it O segundo iterador de comparacao
+   */
+  bool isColBigger(const Iterator &it);
 
   /**
    * @brief Sobrecarga do operador igualdade

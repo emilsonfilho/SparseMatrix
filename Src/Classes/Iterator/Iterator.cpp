@@ -15,15 +15,15 @@ void Iterator::nextInCol() {
 }
 
 bool Iterator::isRowBigger(const Iterator &it) {
-  ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
-
-  return pointer->getRow() > it.pointer->getRow();
+  return compareRows(it, std::greater<int>());
 }
 
 bool Iterator::isRowSmaller(const Iterator &it) {
-  ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
+  return compareRows(it, std::less<int>());
+}
 
-  return pointer->getRow() < it.pointer->getRow();
+bool Iterator::isColBigger(const Iterator &it) {
+  return compareCols(it, std::greater<int>());
 }
 
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }

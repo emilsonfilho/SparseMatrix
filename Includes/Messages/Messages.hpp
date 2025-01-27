@@ -53,6 +53,11 @@ std::string invalidCommandMessage();
  * @brief Mensagem de colunas diferentes
  */
 std::string differentColsMessage();
+
+/**
+ * @brief Menagem de linhas diferentes
+ */
+std::string differentRowsMessage();
 } // namespace Messages
 
 #endif
