@@ -9,7 +9,7 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Main.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Main.o $(BIN)/SparseMatrix.o
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
 
@@ -30,6 +30,9 @@ $(BIN)/Node.o: $(CLASSES)/Node/Node.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/Iterator.o: $(CLASSES)/Iterator/Iterator.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/SparseMatrix.o: $(CLASSES)/SparseMatrix/SparseMatrix.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 # $(BIN)/teste.o: test.cpp
