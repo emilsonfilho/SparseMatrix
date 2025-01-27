@@ -1,6 +1,8 @@
 #include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 
 SparseMatrix::SparseMatrix(int numRows, int numCols) {
+  ValidationUtils::verifyRowCol(numRows, numCols);
+
   Node *head = new Node(0, 0, 0.0);
 
   Node *aux = head;
@@ -32,4 +34,4 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
   this->numCols = numCols;
 }
 
-Node *SparseMatrix::getHead() const { return head; }
+const Node *SparseMatrix::getHead() const { return head; }
