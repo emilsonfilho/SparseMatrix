@@ -43,11 +43,18 @@ public:
 
   /**
    * @brief Verifica se o índice da linha atual é maior do que a de outro
-   *iterador
+   * iterador
    *
    * @param it O segundo iterador de comparação
    **/
   bool isRowBigger(const Iterator &it);
+
+  /**
+   * @brief Verifica se o índice da linha atual é menor do que a de outro iterador
+   * 
+   * @param it O segundo iterador de comparação
+   */
+  bool isRowSmaller(const Iterator &it);
 
   /**
    * @brief Sobrecarga do operador igualdade

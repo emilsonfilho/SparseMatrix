@@ -15,9 +15,15 @@ void Iterator::nextInCol() {
 }
 
 bool Iterator::isRowBigger(const Iterator &it) {
-  ValidationUtils::verifySameCol(pointer->getCol(), it.pointer->getCol());
+  ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
 
   return pointer->getRow() > it.pointer->getRow();
+}
+
+bool Iterator::isRowSmaller(const Iterator &it) {
+  ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
+
+  return pointer->getRow() < it.pointer->getRow();
 }
 
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }
