@@ -29,6 +29,11 @@ public:
    */
   void nextInRow();
   
+  /**
+  * @brief Verifica se o índice da linha atual é maior do que a de outro iterador
+  * 
+  * @param it O segundo iterador de comparação
+  **/
   bool isRowBigger(const Iterator& it);
 
   /**
