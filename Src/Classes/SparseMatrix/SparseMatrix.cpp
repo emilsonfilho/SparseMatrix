@@ -32,4 +32,4 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
   this->numCols = numCols;
 }
 
-Node *SparseMatrix::getHead() { return head; }
+Node *SparseMatrix::getHead() const { return head; }
