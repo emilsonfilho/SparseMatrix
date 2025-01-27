@@ -48,6 +48,11 @@ std::string rowZero();
  * @brief Mensagem de comando inválido
  */
 std::string invalidCommandMessage();
+
+/**
+ * @brief Mensagem de colunas diferentes
+ */
+std::string differentColsMessage();
 } // namespace Messages
 
 #endif
