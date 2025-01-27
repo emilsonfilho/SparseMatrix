@@ -1,8 +1,8 @@
 #ifndef ITERATOR_HPP
 #define ITERATOR_HPP
 
-#include "../Node/Node.hpp"
 #include "../../Utils/Validation/Validation.hpp"
+#include "../Node/Node.hpp"
 
 class Iterator {
 private:
@@ -30,11 +30,10 @@ public:
    */
   void nextInRow();
 
-
   /**
-   * 
+   *
    * @brief Move o interator para o proximo nó naquela coluna
-   * 
+   *
    * @note Em caso de não hver mais nenhum próximo elemento, aponta-se para o nó
    * sentinela.
    * @note Se o iterator já apontar para o nó sentinela e não houver próximos
@@ -43,11 +42,12 @@ public:
   void nextInCol();
 
   /**
-  * @brief Verifica se o índice da linha atual é maior do que a de outro iterador
-  * 
-  * @param it O segundo iterador de comparação
-  **/
-  bool isRowBigger(const Iterator& it);
+   * @brief Verifica se o índice da linha atual é maior do que a de outro
+   *iterador
+   *
+   * @param it O segundo iterador de comparação
+   **/
+  bool isRowBigger(const Iterator &it);
 
   /**
    * @brief Sobrecarga do operador igualdade
@@ -57,13 +57,12 @@ public:
    */
   bool operator==(const Iterator &it);
 
-
   /**
-   * 
+   *
    * @brief Sobrevarga do operador diferente
-   * 
-   * Dois Interaores são considerados diferentes se não apontam para o mesmo endereço de
-   * memória
+   *
+   * Dois Interaores são considerados diferentes se não apontam para o mesmo
+   * endereço de memória
    */
   bool operator!=(const Iterator &it);
 

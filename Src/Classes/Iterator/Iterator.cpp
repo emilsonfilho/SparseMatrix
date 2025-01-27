@@ -9,18 +9,18 @@ void Iterator::nextInRow() {
 }
 
 void Iterator::nextInCol() {
-  if(pointer != nullptr and pointer->getDown() != pointer){
+  if (pointer != nullptr and pointer->getDown() != pointer) {
     pointer = pointer->getDown();
   }
 }
 
-bool Iterator::isRowBigger(const Iterator& it) {
+bool Iterator::isRowBigger(const Iterator &it) {
   ValidationUtils::verifySameCol(pointer->getCol(), it.pointer->getCol());
 
   return pointer->getRow() > it.pointer->getRow();
 }
 
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer; }
-bool Iterator::operator!=(const Iterator &it) { return pointer != it.pointer; } 
+bool Iterator::operator!=(const Iterator &it) { return pointer != it.pointer; }
 double &Iterator::operator*() { return pointer->getValue(); }
 const double &Iterator::operator*() const { return pointer->getValue(); }

@@ -1,8 +1,8 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
-#include "../Node/Node.hpp"
 #include "../../Utils/Validation/Validation.hpp"
+#include "../Node/Node.hpp"
 
 class SparseMatrix {
 private:

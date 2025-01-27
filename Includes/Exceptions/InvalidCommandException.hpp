@@ -8,7 +8,7 @@ class InvalidCommandException : public std::runtime_error {
 public:
   /**
    * @brief Cria uma exceção de comando inválido
-   * 
+   *
    * @param message Mensagem a ser exibida
    */
   explicit InvalidCommandException(const std::string &message);

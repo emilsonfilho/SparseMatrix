@@ -23,6 +23,7 @@ void verifyValidRowCol(int row, int col) {
 }
 
 void verifySameCol(int col1, int col2) {
-  if (areSameValues(col1, col2)) throw DifferentColsException(Messages::differentColsMessage());
+  if (areSameValues(col1, col2))
+    throw DifferentColsException(Messages::differentColsMessage());
 }
 } // namespace ValidationUtils
