@@ -20,6 +20,24 @@ public:
   Iterator(Node *address);
 
   /**
+   * @brief Move o iterator para o próximo nó naquela linha
+   *
+   * @note Em caso de não hver mais nenhum próximo elemento, aponta-se para o nó
+   * sentinela.
+   * @note Se o iterator já apontar para o nó sentinela e não houver próximos
+   * elemetos, aponta-se para o própro sentinela
+   */
+  void nextInRow();
+
+  /**
+   * @brief Sobrecarga do operador igualdade
+   *
+   * Dois Iteradores são considerados iguais se apontam para o mesmo endereço de
+   * memória
+   */
+  bool operator==(const Iterator &it);
+
+  /**
    * @brief Retorna uma referência para o valor do nó apontado
    */
   double &operator*();
