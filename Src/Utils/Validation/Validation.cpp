@@ -21,4 +21,13 @@ void verifyValidRowCol(int row, int col) {
   if (col < 0)
     throw InvalidColumnException(Messages::invalidColumnMessage(col));
 }
+
+void verifyValidIndexInVector(int number, int size) {
+  if (number < 0)
+    throw ArgumentOutOfRangeException(Messages::negativeIndexMessage(number));
+
+  if (number >= size)
+    throw ArgumentOutOfRangeException(Messages::outOfArrayMessage(number));
+
+}
 } // namespace ValidationUtils

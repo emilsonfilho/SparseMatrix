@@ -33,7 +33,19 @@ std::string invalidCommandMessage() {
   return "Comando invalido! Use o comando 'help' para listar todos os comandos";
 }
 
-std::string invaildArgumentForNumber() {
+std::string invalidArgumentForNumber() {
   return "Entrada invalida. Por favor, digite um numero valido";
+}
+
+std::string outOfArrayMessage(int number) {
+  std::ostringstream os;
+  os << "O indice " << number << " esta fora dos limites do vetor";
+  return os.str();
+}
+
+std::string negativeIndexMessage(int number) {
+  std::ostringstream os;
+  os << "O indice " << number << " eh invalido pois eh negativo";
+  return os.str();
 }
 } // namespace Messages

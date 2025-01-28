@@ -9,7 +9,7 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/PrintMatrix.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/PrintMatrix.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o
 
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
@@ -65,6 +65,9 @@ $(BIN)/IgnoreCin.o: $(UTILS)/Tools/IgnoreCin.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/InvalidArgumentException.o: $(SRC)/Exceptions/InvalidArgumentException.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/ArgumentOutOfRangeException.o: $(SRC)/Exceptions/ArgumentOutOfRangeException.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
   
 # $(BIN)/teste.o: test.cpp

@@ -7,6 +7,7 @@
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 #include "Includes/Utils/Tools/IgnoreCin.hpp"
+#include "Includes/Utils/Validation/Validation.hpp"
 #include "Includes/Exceptions/InvalidArgumentException.hpp"
 #include "Includes/Messages/Messages.hpp"
 
@@ -17,7 +18,7 @@ int main() {
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
-  invoker.registerCommand(printCommand.getName(), &printCommand, [&matrices](){
+  invoker.registerCommand(printCommand.getName(), &printCommand, [&matrices]() -> ContextCommand* {
     int num = -1;
     
     while (true) {
@@ -25,7 +26,9 @@ int main() {
         std::cout << "Digite o numero da matrix que voce quer imprimir: ";
 
         if (!(std::cin >> num)) throw InvalidArgumentException(Messages::invalidArgumentForNumber());
-        
+
+        ValidationUtils::verifyValidIndexInVector(num, matrices.size());
+        break;
       } catch (const std::invalid_argument &e) {
         std::cout << e.what() << "\n";
         std::cin.clear();
@@ -33,6 +36,7 @@ int main() {
       } catch (const std::out_of_range &e) {
         std::cout << e.what() << "\n";
       }
+    }
 
     ignoreCin();
 
