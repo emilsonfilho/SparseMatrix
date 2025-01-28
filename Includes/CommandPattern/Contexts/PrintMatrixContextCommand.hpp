@@ -3,16 +3,16 @@
 
 #include <vector>
 
-#include "ContextCommand.hpp"
 #include "../../Classes/SparseMatrix/SparseMatrix.hpp"
 #include "../../Utils/Operations/PrintMatrix.hpp"
+#include "ContextCommand.hpp"
 
 class PrintMatrixContextCommand : public ContextCommand {
 public:
-    int index;
-    std::vector<SparseMatrix*>& matrices;
+  int index;
+  std::vector<SparseMatrix *> &matrices;
 
-    PrintMatrixContextCommand(int index, std::vector<SparseMatrix*>& matrices);
+  PrintMatrixContextCommand(int index, std::vector<SparseMatrix *> &matrices);
 };
 
 #endif

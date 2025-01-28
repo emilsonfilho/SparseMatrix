@@ -2,46 +2,49 @@
 #include <string>
 #include <vector>
 
-#include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
+#include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
-#include "Includes/Utils/Tools/IgnoreCin.hpp"
-#include "Includes/Utils/Validation/Validation.hpp"
 #include "Includes/Exceptions/InvalidArgumentException.hpp"
 #include "Includes/Messages/Messages.hpp"
+#include "Includes/Utils/Tools/IgnoreCin.hpp"
+#include "Includes/Utils/Validation/Validation.hpp"
 
 int main() {
   InvokerCommand invoker;
-  std::vector<SparseMatrix*> matrices;
+  std::vector<SparseMatrix *> matrices;
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
-  invoker.registerCommand(printCommand.getName(), &printCommand, [&matrices]() -> ContextCommand* {
-    int num = -1;
-    
-    while (true) {
-      try {
-        std::cout << "Digite o numero da matrix que voce quer imprimir: ";
+  invoker.registerCommand(
+      printCommand.getName(), &printCommand, [&matrices]() -> ContextCommand * {
+        int num = -1;
 
-        if (!(std::cin >> num)) throw InvalidArgumentException(Messages::invalidArgumentForNumber());
+        while (true) {
+          try {
+            std::cout << "Digite o numero da matrix que voce quer imprimir: ";
 
-        ValidationUtils::verifyValidIndexInVector(num, matrices.size());
-        break;
-      } catch (const std::invalid_argument &e) {
-        std::cout << e.what() << "\n";
-        std::cin.clear();
+            if (!(std::cin >> num))
+              throw InvalidArgumentException(
+                  Messages::invalidArgumentForNumber());
+
+            ValidationUtils::verifyValidIndexInVector(num, matrices.size());
+            break;
+          } catch (const std::invalid_argument &e) {
+            std::cout << e.what() << "\n";
+            std::cin.clear();
+            ignoreCin();
+          } catch (const std::out_of_range &e) {
+            std::cout << e.what() << "\n";
+          }
+        }
+
         ignoreCin();
-      } catch (const std::out_of_range &e) {
-        std::cout << e.what() << "\n";
-      }
-    }
 
-    ignoreCin();
-
-    return new PrintMatrixContextCommand(num, matrices);
-  });
+        return new PrintMatrixContextCommand(num, matrices);
+      });
 
   while (true) {
     try {

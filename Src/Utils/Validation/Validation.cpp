@@ -28,6 +28,5 @@ void verifyValidIndexInVector(int number, int size) {
 
   if (number >= size)
     throw ArgumentOutOfRangeException(Messages::outOfArrayMessage(number));
-
 }
 } // namespace ValidationUtils

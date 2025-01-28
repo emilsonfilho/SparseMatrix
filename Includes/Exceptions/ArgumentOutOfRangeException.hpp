@@ -6,8 +6,7 @@
 
 class ArgumentOutOfRangeException : public std::out_of_range {
 public:
-    explicit ArgumentOutOfRangeException(const std::string &message);
+  explicit ArgumentOutOfRangeException(const std::string &message);
 };
 
 #endif
-
