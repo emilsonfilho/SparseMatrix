@@ -1,17 +1,29 @@
 #include <exception>
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
-// #include "Includes/CommandPattern/Commands/TestCommand.hpp"
+#include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
+
+#include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 
 int main() {
-
   InvokerCommand invoker;
+  std::vector<SparseMatrix*> matrices;
+  matrices.push_back(new SparseMatrix(2, 3));
 
-  // TestCommand testCommand("test", "uma funcao teste");
+  PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
+  invoker.registerCommand(printCommand.getName(), &printCommand, [&matrices](){
+    std::cout << "Digite o numero da matrix que voce quer imprimir: ";
+    
+    int num;
+    std::cin >> num;
+
+    return new PrintMatrixContextCommand(num, matrices);
+  });
 
   while (true) {
     try {
@@ -26,7 +38,7 @@ int main() {
         invoker.executeCommand(input);
       }
     } catch (const std::exception &e) {
-      std::cout << e.what() << " haha\n";
+      std::cout << e.what() << "\n";
     }
   }
 
