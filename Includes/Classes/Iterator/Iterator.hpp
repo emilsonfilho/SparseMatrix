@@ -35,11 +35,10 @@ public:
    */
   void nextInRow();
 
-
   /**
-   * 
+   *
    * @brief Move o interator para o proximo nó naquela coluna
-   * 
+   *
    * @note Em caso de não hver mais nenhum próximo elemento, aponta-se para o nó
    * sentinela.
    * @note Se o iterator já apontar para o nó sentinela e não houver próximos
@@ -50,7 +49,7 @@ public:
   /**
    * @brief Retorna um ponteiro não modificável para o qual o iterator aponta
    */
-  const Node* getPointer() const;
+  const Node *getPointer() const;
 
   /**
    * @brief Sobrecarga do operador igualdade
@@ -60,13 +59,12 @@ public:
    */
   bool operator==(const Iterator &it);
 
-
   /**
-   * 
+   *
    * @brief Sobrevarga do operador diferente
-   * 
-   * Dois Interaores são considerados diferentes se não apontam para o mesmo endereço de
-   * memória
+   *
+   * Dois Interaores são considerados diferentes se não apontam para o mesmo
+   * endereço de memória
    */
   bool operator!=(const Iterator &it);
 

@@ -10,7 +10,7 @@
 namespace ValidationUtils {
 /**
  * @brief Faz a verificação de linha e coluna antes da criação da matrix
- * 
+ *
  * @param row Número da linha
  * @param col Número da coluna
  */
@@ -18,7 +18,7 @@ void verifyRowCol(int row, int col);
 
 /**
  * @brief Faz verificação se Node é válido
- * 
+ *
  * @param row Número da linha
  * @param col Número da coluna
  */

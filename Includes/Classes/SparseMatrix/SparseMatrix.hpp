@@ -1,8 +1,8 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
-#include "../Node/Node.hpp"
 #include "../Iterator/Iterator.hpp"
+#include "../Node/Node.hpp"
 
 class SparseMatrix {
 private:

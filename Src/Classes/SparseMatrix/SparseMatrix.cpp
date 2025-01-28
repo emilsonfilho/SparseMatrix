@@ -9,7 +9,8 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
 
     // Associando os ponteiros na mesma linha
     aux->setNext(newNode);
-    newNode->setDown(newNode); // Garantindo que a listas de down sejam circulares
+    newNode->setDown(
+        newNode); // Garantindo que a listas de down sejam circulares
 
     aux = aux->getNext();
   }
