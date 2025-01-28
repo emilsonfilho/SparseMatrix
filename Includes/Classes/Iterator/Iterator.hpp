@@ -77,7 +77,7 @@ public:
    * @brief Retorna um ponteiro não modificável para o qual o iterator aponta
    */
   const Node *getPointer() const;
-
+  /**
    * @brief Verifica se o índice da linha atual é maior do que a de outro
    * iterador
    *

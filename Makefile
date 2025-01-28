@@ -68,6 +68,7 @@ $(BIN)/InvalidArgumentException.o: $(SRC)/Exceptions/InvalidArgumentException.cp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/ArgumentOutOfRangeException.o: $(SRC)/Exceptions/ArgumentOutOfRangeException.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/DifferentColsException.o: $(SRC)/Exceptions/DifferentColsException.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
