@@ -1,8 +1,8 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
-#include "../Iterator/Iterator.hpp"
 #include "../../Utils/Validation/Validation.hpp"
+#include "../Iterator/Iterator.hpp"
 #include "../Node/Node.hpp"
 
 class SparseMatrix {
@@ -46,6 +46,15 @@ public:
    * @brief Retorna o número de colunas da matriz
    */
   int getNumCols() const;
+
+  /**
+   * @brief Destrutor de uma matrix
+   *
+   * A desalocação de memória para os Nodes são feitos aqui
+   *
+   * @note Complexidade O(n * m)
+   */
+  ~SparseMatrix();
 };
 
 #endif
