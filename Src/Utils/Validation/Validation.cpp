@@ -29,7 +29,7 @@ void verifyValidIndexInVector(int number, int size) {
   if (number >= size)
     throw ArgumentOutOfRangeException(Messages::outOfArrayMessage(number));
 }
-  
+
 void verifyDifferentCol(int col1, int col2) {
   if (!areSameValues(col1, col2))
     throw DifferentColsException(Messages::differentColsMessage());
