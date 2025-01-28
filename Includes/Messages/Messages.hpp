@@ -48,6 +48,11 @@ std::string rowZero();
  * @brief Mensagem de comando inválido
  */
 std::string invalidCommandMessage();
+
+/**
+ * @brief Mensagem de argumento inválido
+ */
+std::string invalidArgumentForNumber();
 } // namespace Messages
 
 #endif

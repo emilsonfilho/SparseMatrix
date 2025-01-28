@@ -5,6 +5,7 @@
 #include "../../../Includes/Messages/Messages.hpp"
 #include "../../Exceptions/InvalidColumnException.hpp"
 #include "../../Exceptions/InvalidRowException.hpp"
+#include "../../Exceptions/ArgumentOutOfRangeException.hpp"
 
 // serve para a validação antes da criação da matriz
 namespace ValidationUtils {
@@ -23,6 +24,14 @@ void verifyRowCol(int row, int col);
  * @param col Número da coluna
  */
 void verifyValidRowCol(int row, int col);
+
+/**
+ * @brief faz a verificação se o número é váido para um determinado size
+ * 
+ * @param num Número a ser verificado
+ * @param size Tamanho do vetor
+ */
+void verifyValidIndexInVector(int number, int size);
 } // namespace ValidationUtils
 
 #endif

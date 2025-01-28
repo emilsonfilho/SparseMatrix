@@ -32,4 +32,8 @@ std::string rowZero() { return "A linha não pode ser zero"; }
 std::string invalidCommandMessage() {
   return "Comando invalido! Use o comando 'help' para listar todos os comandos";
 }
+
+std::string invaildArgumentForNumber() {
+  return "Entrada invalida. Por favor, digite um numero valido";
+}
 } // namespace Messages

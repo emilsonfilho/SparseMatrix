@@ -1,13 +1,14 @@
 #include <exception>
-#include <iostream>
 #include <string>
 #include <vector>
-#include <limits>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
+#include "Includes/Utils/Tools/IgnoreCin.hpp"
+#include "Includes/Exceptions/InvalidArgumentException.hpp"
+#include "Includes/Messages/Messages.hpp"
 
 int main() {
   InvokerCommand invoker;
@@ -17,11 +18,23 @@ int main() {
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
   invoker.registerCommand(printCommand.getName(), &printCommand, [&matrices](){
-    std::cout << "Digite o numero da matrix que voce quer imprimir: ";
+    int num = -1;
     
-    int num;
-    std::cin >> num;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (true) {
+      try {
+        std::cout << "Digite o numero da matrix que voce quer imprimir: ";
+
+        if (!(std::cin >> num)) throw InvalidArgumentException(Messages::invalidArgumentForNumber());
+        
+      } catch (const std::invalid_argument &e) {
+        std::cout << e.what() << "\n";
+        std::cin.clear();
+        ignoreCin();
+      } catch (const std::out_of_range &e) {
+        std::cout << e.what() << "\n";
+      }
+
+    ignoreCin();
 
     return new PrintMatrixContextCommand(num, matrices);
   });
