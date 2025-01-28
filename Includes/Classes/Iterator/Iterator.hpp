@@ -18,6 +18,12 @@ public:
    * @param address Endereço da memória a ser apontado pelo Iterator
    */
   Iterator(Node *address);
+  /**
+   * @brief Construtor para um endereço de memória constante indicado
+   *
+   * @param address Endereço da memória a ser apontado pelo Iterator
+   */
+  Iterator(const Node *address);
 
   /**
    * @brief Move o iterator para o próximo nó naquela linha
@@ -40,6 +46,11 @@ public:
    * elemetos, aponta-se para o própro sentinela
    */
   void nextInCol();
+
+  /**
+   * @brief Retorna um ponteiro não modificável para o qual o iterator aponta
+   */
+  const Node* getPointer() const;
 
   /**
    * @brief Sobrecarga do operador igualdade

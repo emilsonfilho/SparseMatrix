@@ -2,6 +2,7 @@
 
 Iterator::Iterator() = default;
 Iterator::Iterator(Node *address) : pointer(address) {}
+Iterator::Iterator(const Node *address) : pointer(const_cast<Node*>(address)) {}
 
 void Iterator::nextInRow() {
   if (pointer != nullptr and pointer->getNext() != pointer)
@@ -13,6 +14,8 @@ void Iterator::nextInCol() {
     pointer = pointer->getDown();
   }
 }
+
+const Node* Iterator::getPointer() const { return pointer; }
 
 bool Iterator::operator==(const Iterator &it) { return pointer == it.pointer;}
 bool Iterator::operator!=(const Iterator &it) { return pointer != it.pointer;} 

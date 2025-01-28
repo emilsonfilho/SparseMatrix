@@ -9,7 +9,7 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
 
     // Associando os ponteiros na mesma linha
     aux->setNext(newNode);
-    newNode->setDown(aux); // Garantindo que a listas de down sejam circulares
+    newNode->setDown(newNode); // Garantindo que a listas de down sejam circulares
 
     aux = aux->getNext();
   }
@@ -20,7 +20,7 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
     Node *newNode = new Node(i, 0, 0.0);
 
     aux->setDown(newNode);
-    newNode->setNext(aux);
+    newNode->setNext(newNode);
 
     aux = aux->getDown();
   }
@@ -32,4 +32,7 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
   this->numCols = numCols;
 }
 
-Node *SparseMatrix::getHead() const { return head; }
+Node *SparseMatrix::getHead() { return head; }
+const Node *SparseMatrix::getHead() const { return head; }
+int SparseMatrix::getNumRows() const { return numRows; }
+int SparseMatrix::getNumCols() const { return numCols; }
