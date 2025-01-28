@@ -6,7 +6,7 @@
 
 class DifferentRowsException : public std::runtime_error {
 public:
-    DifferentRowsException(const std::string &message);
+    explicit DifferentRowsException(const std::string &message);
 };
 
 #endif
