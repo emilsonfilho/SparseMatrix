@@ -1,6 +1,7 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
+#include "../../Utils/Validation/Validation.hpp"
 #include "../Node/Node.hpp"
 
 class SparseMatrix {

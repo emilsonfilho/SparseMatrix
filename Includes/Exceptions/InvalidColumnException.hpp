@@ -8,7 +8,7 @@ class InvalidColumnException : public std::runtime_error {
 public:
   /**
    * @brief Cria uma exceção de coluna inválida
-   * 
+   *
    * @param message Mensagem a ser exibida
    */
   explicit InvalidColumnException(const std::string &message);

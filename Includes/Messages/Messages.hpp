@@ -8,28 +8,28 @@
 namespace Messages {
 /**
  * @brief Mensagem de linha inválida
- * 
+ *
  * @param row Número da linha
  */
 std::string invalidRowMessage(int row);
 
 /**
  * @brief Mensagem de coluna inválida
- * 
+ *
  * @param col Número da coluna
  */
 std::string invalidColumnMessage(int col);
 
 /**
  * @brief Mensagem de coluna negativa
- * 
+ *
  * @param col Número da coluna
  */
 std::string colNegative(int col);
 
 /**
  * @brief Mensagem de linha negativa
- * 
+ *
  * @param row Número da linha
  */
 std::string rowNegative(int row);
@@ -48,6 +48,16 @@ std::string rowZero();
  * @brief Mensagem de comando inválido
  */
 std::string invalidCommandMessage();
+
+/**
+ * @brief Mensagem de colunas diferentes
+ */
+std::string differentColsMessage();
+
+/**
+ * @brief Menagem de linhas diferentes
+ */
+std::string differentRowsMessage();
 } // namespace Messages
 
 #endif
