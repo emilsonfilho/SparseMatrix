@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
@@ -11,7 +12,6 @@
 int main() {
   InvokerCommand invoker;
   std::vector<SparseMatrix*> matrices;
-  matrices.push_back(new SparseMatrix(2, 3));
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
 
@@ -21,6 +21,7 @@ int main() {
     
     int num;
     std::cin >> num;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     return new PrintMatrixContextCommand(num, matrices);
   });
