@@ -37,7 +37,7 @@ void verifyDifferentCol(int col1, int col2);
 
 /**
  * @brief Verifica se duas linhas são diferentes
- * 
+ *
  * @param row1 Linha 1
  * @param row2 Linha 2
  */

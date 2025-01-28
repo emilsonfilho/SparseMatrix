@@ -6,12 +6,12 @@
 
 class DifferentRowsException : public std::runtime_error {
 public:
-    /**
+  /**
    * @brief Exceções para quando duas linhas forem diferentes
    *
    * @param message Mensagem a ser capturada
    */
-    explicit DifferentRowsException(const std::string &message);
+  explicit DifferentRowsException(const std::string &message);
 };
 
 #endif

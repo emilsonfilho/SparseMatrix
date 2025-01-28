@@ -10,29 +10,30 @@ private:
 
   /**
    * @brief Compara duas linhas
-   * 
+   *
    * @param it O segundo iterador de comparação
    * @param comp Operação de comparação
    */
-  template<typename Comp>
-  bool compareRows(const Iterator &it, Comp comp) {
-    ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
+  template <typename Comp> bool compareRows(const Iterator &it, Comp comp) {
+    ValidationUtils::verifyDifferentCol(pointer->getCol(),
+                                        it.pointer->getCol());
 
     return comp(pointer->getRow(), it.pointer->getRow());
   }
 
   /**
    * @brief Compara duas colunas
-   * 
+   *
    * @param it O segundo iterador de comparação
    * @param comp Operação de comparação
    */
-  template <typename Comp>
-  bool compareCols(const Iterator &it, Comp comp) {
-    ValidationUtils::verifyDifferentRow(pointer->getRow(), it.pointer->getRow());
+  template <typename Comp> bool compareCols(const Iterator &it, Comp comp) {
+    ValidationUtils::verifyDifferentRow(pointer->getRow(),
+                                        it.pointer->getRow());
 
     return comp(pointer->getCol(), it.pointer->getCol());
   }
+
 public:
   /**
    * @brief Construtor padrão que define o Iterator para nullptr
@@ -83,14 +84,16 @@ public:
   bool isRowSmaller(const Iterator &it);
 
   /**
-   * @bief Verifica se o índice da coluna atual é menor do que a de outro iterador
-   * 
+   * @bief Verifica se o índice da coluna atual é menor do que a de outro
+   * iterador
+   *
    * @param it O segundo iterador de comparação
    */
   bool isColBigger(const Iterator &it);
   /**
-   * @brief Verifica se o índice da coluna atual é menor do que a de outro iterador
-   * 
+   * @brief Verifica se o índice da coluna atual é menor do que a de outro
+   * iterador
+   *
    * @param it O segundo iterador de comparação
    */
   bool isColSmaller(const Iterator &it);
