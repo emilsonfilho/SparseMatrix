@@ -2,6 +2,7 @@
 #define SPARSE_MATRIX_HPP
 
 #include "../Iterator/Iterator.hpp"
+#include "../../Utils/Validation/Validation.hpp"
 #include "../Node/Node.hpp"
 
 class SparseMatrix {

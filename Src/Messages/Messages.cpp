@@ -47,5 +47,12 @@ std::string negativeIndexMessage(int number) {
   std::ostringstream os;
   os << "O indice " << number << " eh invalido pois eh negativo";
   return os.str();
+
+std::string differentColsMessage() {
+  return "Nao eh possivel comparar linhas com diferentes colunas";
+}
+
+std::string differentRowsMessage() {
+  return "Nao eh possivel comparar colunas com diferentes linhas";
 }
 } // namespace Messages
