@@ -50,6 +50,21 @@ std::string rowZero();
 std::string invalidCommandMessage();
 
 /**
+ * @brief Mensagem de argumento inválido
+ */
+std::string invalidArgumentForNumber();
+
+/**
+ * @brief Mensagem de valor fora dos limites do vetor
+ */
+std::string outOfArrayMessage(int number);
+
+/**
+ * @brief Mensagem de indice negativo
+ */
+std::string negativeIndexMessage(int number);
+  
+/**
  * @brief Mensagem de colunas diferentes
  */
 std::string differentColsMessage();

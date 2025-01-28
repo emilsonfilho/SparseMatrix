@@ -28,11 +28,11 @@ public:
   /**
    * @brief Retorna a linha do Node
    */
-  int getRow();
+  int getRow() const;
   /**
    * @brief Retorna a coluna do Node
    */
-  int getCol();
+  int getCol() const;
 
   /**
    * @brief Retorna o valor armazenado no Node
@@ -56,7 +56,7 @@ public:
   /**
    * @brief Retorna um ponteiro para o próximo Node na coluna
    */
-  Node *getDown();
+  Node *getDown() const;
   /**
    * @brief Sobrescereve o ponteiro para o próximo Node na coluna
    *
@@ -68,7 +68,7 @@ public:
    * @brief Retorna um ponteiro para o próximo Node na linha, ele mesmo se não
    * existe
    */
-  Node *getNext();
+  Node *getNext() const;
   /**
    * @brief Sobrescreve um ponteiro para o próximo Node na linha
    *

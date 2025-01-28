@@ -33,6 +33,21 @@ std::string invalidCommandMessage() {
   return "Comando invalido! Use o comando 'help' para listar todos os comandos";
 }
 
+std::string invalidArgumentForNumber() {
+  return "Entrada invalida. Por favor, digite um numero valido";
+}
+
+std::string outOfArrayMessage(int number) {
+  std::ostringstream os;
+  os << "O indice " << number << " esta fora dos limites do vetor";
+  return os.str();
+}
+
+std::string negativeIndexMessage(int number) {
+  std::ostringstream os;
+  os << "O indice " << number << " eh invalido pois eh negativo";
+  return os.str();
+
 std::string differentColsMessage() {
   return "Nao eh possivel comparar linhas com diferentes colunas";
 }

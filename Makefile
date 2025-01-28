@@ -9,7 +9,7 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrix.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o
 
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
@@ -52,10 +52,28 @@ $(BIN)/InvalidRowException.o: $(SRC)/Exceptions/InvalidRowException.cpp
 $(BIN)/SparseMatrix.o: $(CLASSES)/SparseMatrix/SparseMatrix.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
+$(BIN)/PrintMatrix.o: $(UTILS)/Operations/PrintMatrix.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/PrintMatrixCommand.o: $(COMMAND_PATTERN)/Commands/PrintMatrixCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/PrintMatrixContextCommand.o: $(COMMAND_PATTERN)/Contexts/PrintMatrixContextCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/IgnoreCin.o: $(UTILS)/Tools/IgnoreCin.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/InvalidArgumentException.o: $(SRC)/Exceptions/InvalidArgumentException.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/ArgumentOutOfRangeException.o: $(SRC)/Exceptions/ArgumentOutOfRangeException.cpp
+
 $(BIN)/DifferentColsException.o: $(SRC)/Exceptions/DifferentColsException.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/AreSameValues.o: $(UTILS)/Complements/AreSameValues.cpp
+
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
   
 $(BIN)/DifferentRowsException.o: $(SRC)/Exceptions/DifferentRowsException.cpp

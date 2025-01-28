@@ -3,6 +3,7 @@
 
 #include "../../../Includes/Classes/Node/Node.hpp"
 #include "../../../Includes/Messages/Messages.hpp"
+#include "../../Exceptions/ArgumentOutOfRangeException.hpp"
 #include "../../Exceptions/DifferentColsException.hpp"
 #include "../../Exceptions/DifferentRowsException.hpp"
 #include "../../Exceptions/InvalidColumnException.hpp"
@@ -28,8 +29,16 @@ void verifyRowCol(int row, int col);
 void verifyValidRowCol(int row, int col);
 
 /**
+ * @brief faz a verificação se o número é váido para um determinado size
+ *
+ * @param num Número a ser verificado
+ * @param size Tamanho do vetor
+ */
+void verifyValidIndexInVector(int number, int size);
+
+/**
  * @brief Verifica se duas colunas são diferentes
-t *
+ *
  * @param col1 Coluna 1
  * @param col2 Coluna 2
  */
