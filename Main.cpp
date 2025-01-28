@@ -5,14 +5,7 @@
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 // #include "Includes/CommandPattern/Commands/TestCommand.hpp"
 
-#include "Includes/Utils/Operations/PrintMatrix.hpp"
-#include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
-
 int main() {
-  SparseMatrix matrix(3, 3);
-  printMatrix(matrix);
-
-
 
   InvokerCommand invoker;
 

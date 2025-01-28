@@ -11,11 +11,24 @@ void printMatrix(const SparseMatrix& matrix) {
             for (int i = 0; i < matrix.getNumCols(); i++) {
                 os << "0 ";
             }
-            os << '\n';
         } else {
-            os << "condicao nao atendida\n";
+            Node* nextNode = it.getPointer()->getNext();
+            int nextNodeCol = nextNode->getCol();
+            
+            for (int i = 1; i <= matrix.getNumCols(); i++) {
+                if (i == nextNodeCol) {
+                    os << nextNode->getValue() << ' ';
+
+                    nextNode = nextNode->getNext();
+                    nextNodeCol = nextNode->getCol();
+                } else {
+                    os << "0 ";
+                }
+            }
+
         }
 
+        os << '\n';
         it.nextInCol();
     }
 
