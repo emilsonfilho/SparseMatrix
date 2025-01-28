@@ -16,7 +16,7 @@ public:
 
   /**
    * @brief Métooo de execução
-   * 
+   *
    * @param context Contexto do comando
    */
   void execute(ContextCommand *context) const override;

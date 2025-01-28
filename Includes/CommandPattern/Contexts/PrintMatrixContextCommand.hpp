@@ -14,7 +14,7 @@ public:
 
   /**
    * @brief Construtro do contexto para impressão
-   * 
+   *
    * @param index Número da matrix
    * @param matrices Vetor com as matrizes do sistema
    */
