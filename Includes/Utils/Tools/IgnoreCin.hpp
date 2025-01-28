@@ -4,6 +4,9 @@
 #include <iostream>
 #include <limits>
 
+/**
+ * @brief Função que elimina espaços deixados pelo buffer de entrada
+ */
 void ignoreCin();
 
 #endif

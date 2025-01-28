@@ -14,6 +14,11 @@ public:
    */
   PrintMatrixCommand(const std::string &name, const std::string &description);
 
+  /**
+   * @brief Métooo de execução
+   * 
+   * @param context Contexto do comando
+   */
   void execute(ContextCommand *context) const override;
 };
 
