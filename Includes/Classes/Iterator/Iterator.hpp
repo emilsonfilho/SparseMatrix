@@ -8,6 +8,12 @@ class Iterator {
 private:
   Node *pointer{nullptr};
 
+  /**
+   * @brief Compara duas linhas
+   * 
+   * @param it O segundo iterador de comparação
+   * @param comp Operação de comparação
+   */
   template<typename Comp>
   bool compareRows(const Iterator &it, Comp comp) {
     ValidationUtils::verifyDifferentCol(pointer->getCol(), it.pointer->getCol());
@@ -15,6 +21,12 @@ private:
     return comp(pointer->getRow(), it.pointer->getRow());
   }
 
+  /**
+   * @brief Compara duas colunas
+   * 
+   * @param it O segundo iterador de comparação
+   * @param comp Operação de comparação
+   */
   template <typename Comp>
   bool compareCols(const Iterator &it, Comp comp) {
     ValidationUtils::verifyDifferentRow(pointer->getRow(), it.pointer->getRow());

@@ -36,7 +36,10 @@ t *
 void verifyDifferentCol(int col1, int col2);
 
 /**
- * @brief Verificad
+ * @brief Verifica se duas linhas são diferentes
+ * 
+ * @param row1 Linha 1
+ * @param row2 Linha 2
  */
 void verifyDifferentRow(int row1, int row2);
 } // namespace ValidationUtils
