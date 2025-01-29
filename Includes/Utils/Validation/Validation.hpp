@@ -51,6 +51,16 @@ void verifyDifferentCol(int col1, int col2);
  * @param row2 Linha 2
  */
 void verifyDifferentRow(int row1, int row2);
+
+/**
+ * @brief Verifica se os índices dados estão dentro dos limites da matriz
+ * 
+ * @param row Linha especificada
+ * @param col Coluna especificada
+ * @param numRows Quantidade de linhas na matrix
+ * @param numCols Quantidade de colunas na matrix
+ */
+void verifyValidIndexes(int row, int col, int numRows, int numCols);
 } // namespace ValidationUtils
 
 #endif

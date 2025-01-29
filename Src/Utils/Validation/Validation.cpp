@@ -39,4 +39,14 @@ void verifyDifferentRow(int row1, int row2) {
   if (!areSameValues(row1, row2))
     throw DifferentRowsException(Messages::differentRowsMessage());
 }
+
+void verifyValidIndexes(int row, int col, int numRows, int numCols) {
+  verifyRowCol(row, col);
+
+  if (row > numRows)
+    throw ArgumentOutOfRangeException(Messages::outOfRowMatrixMessage(row));
+  
+  if (col > numCols)
+    throw ArgumentOutOfRangeException(Messages::outOfColMatrixMessage(col));
+}
 } // namespace ValidationUtils

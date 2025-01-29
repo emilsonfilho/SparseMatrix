@@ -55,9 +55,34 @@ std::string invalidCommandMessage();
 std::string invalidArgumentForNumber();
 
 /**
+ * @brief Mensagem auxiliar que diz que algo está fora de algo
+ * 
+ * @param number O número inválido
+ * @param context String sobre do que se trata o número ("O indice", "A linha", "A coluna")
+ * @param structure O "algo"
+ */
+std::string outOfBoundsMessage(int number, const std::string &context, const std::string& structure);
+
+/**
  * @brief Mensagem de valor fora dos limites do vetor
+ * 
+ * @param number Número inválido
  */
 std::string outOfArrayMessage(int number);
+
+/**
+ * @brief Mensagem de linha fora dos limites da matrix
+ * 
+ * @param number Número inválido
+ */
+std::string outOfRowMatrixMessage(int number);
+
+/**
+ * @brief Mensagem de coluna fora dos limites da matrix
+ * 
+ * @param number Número inválido
+ */
+std::string outOfColMatrixMessage(int number);
 
 /**
  * @brief Mensagem de indice negativo
