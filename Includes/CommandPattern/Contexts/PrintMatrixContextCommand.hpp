@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "../../Classes/SparseMatrix/SparseMatrix.hpp"
-#include "../../Utils/Operations/PrintMatrix.hpp"
 #include "ContextCommand.hpp"
 
 class PrintMatrixContextCommand : public ContextCommand {
