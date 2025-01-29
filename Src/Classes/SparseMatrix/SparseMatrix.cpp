@@ -91,14 +91,13 @@ double SparseMatrix::getElement(int row, int col) const {
   // Percorrendo as linhas até chegar onde eu quero
   while (it.getPointer()->getRow() != row) it.nextInCol();
 
-  while (it.getPointer()->getNext()->getCol() < col) {
+  while (it.getPointer()->getCol() < col) {
     if (it.getPointer()->getNext()->getCol() == 0) return 0;
-
     it.nextInRow();
   }
   
   // Se a coluna for maior do que a gente quer, é porque não existe aquele elemento e existe um que é depois dele
   if (it.getPointer()->getCol() > col) return 0;
-  
+    
   return *it;
 }
