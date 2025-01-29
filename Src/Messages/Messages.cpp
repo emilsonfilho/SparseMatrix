@@ -44,15 +44,15 @@ std::string outOfBoundsMessage(int number, const std::string &context, const std
 }
 
 std::string outOfArrayMessage(int number) {
-  outOfBoundsMessage(number, "O indice", "o vetor");
+  return outOfBoundsMessage(number, "O indice", "o vetor");
 }
 
 std::string outOfRowMatrixMessage(int number) {
-  outOfBoundsMessage(number, "A linha", "a matrix");
+  return outOfBoundsMessage(number, "A linha", "a matriz");
 }
 
 std::string outOfColMatrixMessage(int number) {
-  outOfBoundsMessage(number, "A coluna", "a matrix");
+  return outOfBoundsMessage(number, "A coluna", "a matriz");
 }
 
 std::string negativeIndexMessage(int number) {
@@ -66,5 +66,9 @@ std::string differentColsMessage() {
 
 std::string differentRowsMessage() {
   return "Nao eh possivel comparar colunas com diferentes linhas";
+}
+
+std::string emptyMatricesArrayMessage() {
+  return "Nao existe nenhuma matriz no nosso sistema para efetuar essa operacao. Considere criar uma primeiro";
 }
 } // namespace Messages

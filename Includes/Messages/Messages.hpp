@@ -95,9 +95,14 @@ std::string negativeIndexMessage(int number);
 std::string differentColsMessage();
 
 /**
- * @brief Menagem de linhas diferentes
+ * @brief Mensagem de linhas diferentes
  */
 std::string differentRowsMessage();
+
+/**
+ * @brief Mensagem de vetor de matrizes nulo
+ */
+std::string emptyMatricesArrayMessage();
 } // namespace Messages
 
 #endif
