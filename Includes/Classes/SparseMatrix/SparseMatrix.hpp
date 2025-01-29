@@ -1,9 +1,9 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
+#include <iostream>
+
 #include "../Iterator/Iterator.hpp"
-#include "../../Utils/Validation/Validation.hpp"
-#include "../Node/Node.hpp"
 
 class SparseMatrix {
 private:
@@ -29,6 +29,13 @@ public:
    * Aqui, serão colocados apenas as alocações dos nós sentinelas
    */
   SparseMatrix(int numRows, int numCols);
+
+  /**
+   * @brief Exibe a matrix no terminal
+   * 
+   * @note Complexidade O(n * m)
+   */
+  void print();
 
   /**
    * @brief Retorna um ponteiro modificável para o nó sentinela inicial
