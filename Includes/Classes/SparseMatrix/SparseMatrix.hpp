@@ -53,6 +53,16 @@ public:
    * @brief Retorna o número de colunas da matriz
    */
   int getNumCols() const;
+
+  /**
+   * @brief Pega um elemento de dentro da matri. Se não existir, retorna zero
+   * 
+   * @param row Linha do elemento a ser pego
+   * @param col Coluna do elemento a ser pego
+   * 
+   * @note Complexidade O(n)
+   */
+  double getElement(int row, int col) const;
 };
 
 #endif

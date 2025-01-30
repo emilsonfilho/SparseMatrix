@@ -73,3 +73,31 @@ Node *SparseMatrix::getHead() { return head; }
 const Node *SparseMatrix::getHead() const { return head; }
 int SparseMatrix::getNumRows() const { return numRows; }
 int SparseMatrix::getNumCols() const { return numCols; }
+
+double SparseMatrix::getElement(int row, int col) const {
+  ValidationUtils::verifyValidIndexes(row, col, numRows, numCols);
+
+  // Node porque é melhor de se obter o índice
+  Iterator it(head);
+
+ /*
+   * A lista utilizada é circular e possui nós sentinelas, garantindo que:
+   * - getPointer() nunca retorna nullptr, a menos que o Iterator tenha sido configurado para isso.
+   * - getNext() sempre retorna um endereço válido, evitando acessos inválidos.
+   * - Índices zero nunca são válidos, pois são reservados para nós sentinelas.
+   * Portanto, não há risco de loops infinitos ou acessos inválidos nesta implementação.
+   */
+
+  // Percorrendo as linhas até chegar onde eu quero
+  while (it.getPointer()->getRow() != row) it.nextInCol();
+
+  while (it.getPointer()->getCol() < col) {
+    if (it.getPointer()->getNext()->getCol() == 0) return 0;
+    it.nextInRow();
+  }
+  
+  // Se a coluna for maior do que a gente quer, é porque não existe aquele elemento e existe um que é depois dele
+  if (it.getPointer()->getCol() > col) return 0;
+    
+  return *it;
+}
