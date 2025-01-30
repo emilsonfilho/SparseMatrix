@@ -9,7 +9,7 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o $(BIN)/GetCommand.o $(BIN)/GetContextCommand.o $(BIN)/NoMatricesException.o $(BIN)/GetValidNumber.o
 
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
@@ -77,6 +77,18 @@ $(BIN)/AreSameValues.o: $(UTILS)/Complements/AreSameValues.cpp
 $(BIN)/DifferentRowsException.o: $(SRC)/Exceptions/DifferentRowsException.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
+$(BIN)/GetContextCommand.o: $(COMMAND_PATTERN)/Contexts/GetContextCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/GetCommand.o: $(COMMAND_PATTERN)/Commands/GetCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/NoMatricesException.o: $(SRC)/Exceptions/NoMatricesException.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/GetValidNumber.o: $(UTILS)/Tools/GetValidNumber.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+	
 # $(BIN)/teste.o: test.cpp
 # 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
