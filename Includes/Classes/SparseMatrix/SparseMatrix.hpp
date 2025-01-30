@@ -59,6 +59,8 @@ public:
    * 
    * @param row Linha do elemento a ser pego
    * @param col Coluna do elemento a ser pego
+   * 
+   * @note Complexidade O(n)
    */
   double getElement(int row, int col) const;
 };
