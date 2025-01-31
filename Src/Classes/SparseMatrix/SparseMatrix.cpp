@@ -101,3 +101,25 @@ double SparseMatrix::getElement(int row, int col) const {
     
   return *it;
 }
+SparseMatrix::~SparseMatrix() {
+  Node *sentinel = head;
+
+  Node *currentRow = sentinel;
+  for (int i = 0; i <= numRows; i++) {
+    while (currentRow->getNext() != currentRow) {
+      Node *aux = currentRow->getNext();
+      currentRow->setNext(aux->getNext());
+      delete aux;
+    }
+
+    currentRow = currentRow->getDown();
+  }
+
+  while (sentinel->getDown() != sentinel) {
+    Node *aux = sentinel->getDown();
+    sentinel->setDown(aux->getDown());
+    delete aux;
+  }
+
+  delete sentinel;
+}

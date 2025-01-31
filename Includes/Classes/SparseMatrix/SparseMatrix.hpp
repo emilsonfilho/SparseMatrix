@@ -63,6 +63,15 @@ public:
    * @note Complexidade O(n)
    */
   double getElement(int row, int col) const;
+
+  /**
+   * @brief Destrutor de uma matrix
+   *
+   * A desalocação de memória para os Nodes são feitos aqui
+   *
+   * @note Complexidade O(n * m)
+   */
+  ~SparseMatrix();
 };
 
 #endif
