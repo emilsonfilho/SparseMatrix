@@ -44,10 +44,13 @@ int main() {
   while (true) {
     try {
       std::string input;
+      std::cout << "$";
       std::getline(std::cin, input);
 
       if (input == "help") {
+        std::cout << "help - exibe uma lista de comandos disponiveis\n";
         invoker.showHelp();
+        std::cout << "exit - fecha a aplicacao\n";
       } else if (input == "exit") {
         break;
       } else {
@@ -58,7 +61,7 @@ int main() {
     }
   }
 
-  std::cout << "Até mais!" << std::endl;
+  std::cout << "Ate mais!" << std::endl;
 
   return 0;
 }
