@@ -2,13 +2,17 @@
 #include <string>
 #include <vector>
 
+#include "Defs/UserQuestions.hpp"
+
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
+#include "Includes/CommandPattern/Commands/GetCommand.hpp"
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 #include "Includes/Exceptions/InvalidArgumentException.hpp"
 #include "Includes/Messages/Messages.hpp"
 #include "Includes/Utils/Tools/IgnoreCin.hpp"
+#include "Includes/Utils/Tools/GetValidNumber.hpp"
 #include "Includes/Utils/Validation/Validation.hpp"
 
 int main() {
@@ -16,35 +20,26 @@ int main() {
   std::vector<SparseMatrix *> matrices;
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
+  GetCommand getCommand("get", "exibe um determinado elemento de uma matriz");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
   invoker.registerCommand(
       printCommand.getName(), &printCommand, [&matrices]() -> ContextCommand * {
-        int num = -1;
+        ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
 
-        while (true) {
-          try {
-            std::cout << "Digite o numero da matrix que voce quer imprimir: ";
-
-            if (!(std::cin >> num))
-              throw InvalidArgumentException(
-                  Messages::invalidArgumentForNumber());
-
-            ValidationUtils::verifyValidIndexInVector(num, matrices.size());
-            break;
-          } catch (const std::invalid_argument &e) {
-            std::cout << e.what() << "\n";
-            std::cin.clear();
-            ignoreCin();
-          } catch (const std::out_of_range &e) {
-            std::cout << e.what() << "\n";
-          }
-        }
-
-        ignoreCin();
+        int num = getValidNumber(AskMatrixNumber, { [&](int value) { ValidationUtils::verifyValidIndexInVector(value, matrices.size()); } });
 
         return new PrintMatrixContextCommand(num, matrices);
       });
+      
+    invoker.registerCommand(getCommand.getName(), &getCommand, [&matrices]() -> ContextCommand * {
+      ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
+
+      int index = getValidNumber(AskMatrixNumber, { [&](int value) { ValidationUtils::verifyValidIndexInVector(value, matrices.size()); } });
+      int row = getValidNumber(AskRow, { [&](int value) { ValidationUtils::verifyValidRowIndex(value, matrices[index]->getNumRows()); } }), col = getValidNumber(AskCol, { [&](int value) { ValidationUtils::verifyValidColIndex(value, matrices[index]->getNumCols()); } });
+
+      return new GetContextCommand(row, col, index, matrices);
+    });
 
   while (true) {
     try {

@@ -37,10 +37,22 @@ std::string invalidArgumentForNumber() {
   return "Entrada invalida. Por favor, digite um numero valido";
 }
 
-std::string outOfArrayMessage(int number) {
+std::string outOfBoundsMessage(int number, const std::string &context, const std::string &structure) {
   std::ostringstream os;
-  os << "O indice " << number << " esta fora dos limites do vetor";
+  os << context << ' ' << number << " esta fora dos limites d" << structure;
   return os.str();
+}
+
+std::string outOfArrayMessage(int number) {
+  return outOfBoundsMessage(number, "O indice", "o vetor");
+}
+
+std::string outOfRowMatrixMessage(int number) {
+  return outOfBoundsMessage(number, "A linha", "a matriz");
+}
+
+std::string outOfColMatrixMessage(int number) {
+  return outOfBoundsMessage(number, "A coluna", "a matriz");
 }
 
 std::string negativeIndexMessage(int number) {
@@ -54,5 +66,9 @@ std::string differentColsMessage() {
 
 std::string differentRowsMessage() {
   return "Nao eh possivel comparar colunas com diferentes linhas";
+}
+
+std::string emptyMatricesArrayMessage() {
+  return "Nao existe nenhuma matriz no nosso sistema para efetuar essa operacao. Considere criar uma primeiro";
 }
 } // namespace Messages

@@ -8,5 +8,5 @@ void PrintMatrixCommand::execute(ContextCommand *context) const {
   auto *ctx = dynamic_cast<PrintMatrixContextCommand *>(context);
 
   if (ctx)
-    printMatrix(*ctx->matrices[ctx->index]);
+    ctx->matrices[ctx->index]->print();
 }

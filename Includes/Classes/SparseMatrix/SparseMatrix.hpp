@@ -1,9 +1,9 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
-#include "../../Utils/Validation/Validation.hpp"
+#include <iostream>
+
 #include "../Iterator/Iterator.hpp"
-#include "../Node/Node.hpp"
 
 class SparseMatrix {
 private:
@@ -31,6 +31,13 @@ public:
   SparseMatrix(int numRows, int numCols);
 
   /**
+   * @brief Exibe a matrix no terminal
+   * 
+   * @note Complexidade O(n * m)
+   */
+  void print();
+
+  /**
    * @brief Retorna um ponteiro modificável para o nó sentinela inicial
    */
   Node *getHead();
@@ -46,6 +53,16 @@ public:
    * @brief Retorna o número de colunas da matriz
    */
   int getNumCols() const;
+
+  /**
+   * @brief Pega um elemento de dentro da matri. Se não existir, retorna zero
+   * 
+   * @param row Linha do elemento a ser pego
+   * @param col Coluna do elemento a ser pego
+   * 
+   * @note Complexidade O(n)
+   */
+  double getElement(int row, int col) const;
 
   /**
    * @brief Destrutor de uma matrix
