@@ -88,7 +88,7 @@ std::string outOfColMatrixMessage(int number);
  * @brief Mensagem de indice negativo
  */
 std::string negativeIndexMessage(int number);
-  
+
 /**
  * @brief Mensagem de colunas diferentes
  */

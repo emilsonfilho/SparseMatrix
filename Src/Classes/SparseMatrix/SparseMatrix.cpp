@@ -149,3 +149,25 @@ void SparseMatrix::InsertMatriz(int row, int col, float value) {
     prevCol->setDown(novo);
     novo->setDown(currentCol);
 }
+SparseMatrix::~SparseMatrix() {
+  Node *sentinel = head;
+
+  Node *currentRow = sentinel;
+  for (int i = 0; i <= numRows; i++) {
+    while (currentRow->getNext() != currentRow) {
+      Node *aux = currentRow->getNext();
+      currentRow->setNext(aux->getNext());
+      delete aux;
+    }
+
+    currentRow = currentRow->getDown();
+  }
+
+  while (sentinel->getDown() != sentinel) {
+    Node *aux = sentinel->getDown();
+    sentinel->setDown(aux->getDown());
+    delete aux;
+  }
+
+  delete sentinel;
+}
