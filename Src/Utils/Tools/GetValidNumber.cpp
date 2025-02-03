@@ -5,17 +5,17 @@ int getValidNumber(const std::string &prompt, const IntValidatorArray validation
 
     while (true) {
         try {
-        std::cout << prompt;
+            std::cout << prompt;
 
-        if (!(std::cin >> num))
-            throw InvalidArgumentException(
-                Messages::invalidArgumentForNumber());
+            if (!(std::cin >> num))
+                throw InvalidArgumentException(
+                    Messages::invalidArgumentForNumber());
 
-        for (const auto& validate : validations) {
-            validate(num);
-        }
+            for (const auto& validate : validations) {
+                validate(num);
+            }
 
-        break;
+            break;
         } catch (const std::exception &e) {
             std::cout << e.what() << "\n";
             std::cin.clear();

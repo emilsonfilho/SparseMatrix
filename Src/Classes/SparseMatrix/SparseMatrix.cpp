@@ -21,10 +21,8 @@ SparseMatrix::SparseMatrix(int numRows, int numCols) {
   aux = head; // Resetando sistema para novo uso
   for (int i = 1; i <= numRows; i++) {
     Node *newNode = new Node(i, 0, 0.0);
-
     aux->setDown(newNode);
     newNode->setNext(newNode);
-
     aux = aux->getDown();
   }
   aux->setDown(head);
@@ -100,4 +98,54 @@ double SparseMatrix::getElement(int row, int col) const {
   if (it.getPointer()->getCol() > col) return 0;
     
   return *it;
+}
+
+void SparseMatrix::InsertMatriz(int row, int col, float value) {
+    if (row <= 0 || row > numRows || col <= 0 || col > numCols) {
+        std::cerr << "Erro: Posição ";
+        return;
+    }
+
+    if (value == 0) return;
+    
+    Node *rowSentinela = head->getDown();
+    while (rowSentinela->getRow() != row) {
+        rowSentinela = rowSentinela->getDown();
+    }
+
+    Node *colSentinela = head->getNext();
+    while (colSentinela->getCol() != col) {
+        colSentinela = colSentinela->getNext();
+    }
+
+    Node *prevRow = rowSentinela;
+    Node *currentRow = rowSentinela->getNext();
+    while (currentRow != rowSentinela && currentRow->getCol() < col) {
+        prevRow = currentRow;
+        currentRow = currentRow->getNext();
+    }
+
+    Node *prevCol = colSentinela;
+    Node *currentCol = colSentinela->getDown();
+    while (currentCol != colSentinela && currentCol->getRow() < row) {
+        prevCol = currentCol;
+        currentCol = currentCol->getDown();
+    }
+
+    
+    if (currentRow != rowSentinela && currentRow->getCol() == col) {
+        currentRow->setValue(value);
+        return;
+    }
+
+    // Criando o novo nó
+    Node *novo = new Node(row, col, value, nullptr, nullptr);
+
+    // Inserindo na linha
+    prevRow->setNext(novo);
+    novo->setNext(currentRow);
+
+    // Inserindo na coluna
+    prevCol->setDown(novo);
+    novo->setDown(currentCol);
 }

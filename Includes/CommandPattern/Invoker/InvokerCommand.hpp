@@ -23,6 +23,7 @@ public:
    *
    * @param commandName Nome do comando a ser registrado
    * @param command Ponteiro para o arquivo de comando
+   * @param context Função geradora do contexto do comando
    */
   void registerCommand(const std::string &commandName, Command *command,
                        Context context = nullptr);

@@ -12,6 +12,8 @@ private:
   int numCols;
 
 public:
+  SparseMatrix() = default;
+
   /**
    * @brief Cria a estrutura para uma matriz esparsa útil
    *
@@ -63,6 +65,8 @@ public:
    * @note Complexidade O(n)
    */
   double getElement(int row, int col) const;
+
+  void InsertMatriz(int row, int col, float value);
 };
 
 #endif
