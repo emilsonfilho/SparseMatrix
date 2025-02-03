@@ -11,6 +11,8 @@
 #include "../../Exceptions/NoMatricesException.hpp"
 #include "../Complements/AreSameValues.hpp"
 
+#include <filesystem>
+
 // serve para a validação antes da criação da matriz
 namespace ValidationUtils {
 /**
@@ -115,6 +117,13 @@ void verifyValidIndexes(int row, int col, int numRows, int numCols);
  * @param size Tamanho do array que guarda os ponteiros para as matrizes no sistema
  */
 void verifyIfMatrixArrayIsEmpty(int size);
+
+/**
+ * @brief Verifica se existem arquivos na pasta Files/
+ * 
+ * Se não houver, lança uma exceção
+ */
+void verifyIfThereAreFiles();
 } // namespace ValidationUtils
 
 #endif
