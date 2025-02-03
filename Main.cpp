@@ -25,7 +25,6 @@
 int main() {
   InvokerCommand invoker;
   std::vector<SparseMatrix *> matrices;
-  std::vector<std::string> filesOpened;
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
   GetCommand getCommand("get", "exibe um determinado elemento de uma matriz");
@@ -84,10 +83,13 @@ int main() {
   while (true) {
     try {
       std::string input;
+      std::cout << "$";
       std::getline(std::cin, input);
 
       if (input == "help") {
+        std::cout << "help - exibe uma lista de comandos disponiveis\n";
         invoker.showHelp();
+        std::cout << "exit - fecha a aplicacao\n";
       } else if (input == "exit") {
         break;
       } else {
@@ -98,7 +100,7 @@ int main() {
     }
   }
 
-  std::cout << "Até mais!" << std::endl;
+  std::cout << "Ate mais!" << std::endl;
 
   return 0;
 }

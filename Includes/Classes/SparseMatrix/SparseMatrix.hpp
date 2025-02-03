@@ -67,6 +67,15 @@ public:
   double getElement(int row, int col) const;
 
   void InsertMatriz(int row, int col, float value);
+
+  /**
+   * @brief Destrutor de uma matrix
+   *
+   * A desalocação de memória para os Nodes são feitos aqui
+   *
+   * @note Complexidade O(n * m)
+   */
+  ~SparseMatrix();
 };
 
 #endif
