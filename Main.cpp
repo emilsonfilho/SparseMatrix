@@ -25,7 +25,6 @@
 int main() {
   InvokerCommand invoker;
   std::vector<SparseMatrix *> matrices;
-  std::vector<std::string> filesOpened;
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
   GetCommand getCommand("get", "exibe um determinado elemento de uma matriz");
