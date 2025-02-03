@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <filesystem>
 
-
 #include "Defs/UserQuestions.hpp"
 
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
@@ -17,6 +16,7 @@
 #include "Includes/Messages/Messages.hpp"
 #include "Includes/Utils/Tools/IgnoreCin.hpp"
 #include "Includes/Utils/Tools/GetValidNumber.hpp"
+#include "Includes/Utils/Tools/GetValidString.hpp"
 #include "Includes/Utils/Validation/Validation.hpp"
 
 
@@ -50,34 +50,15 @@ int main() {
   });
     
   invoker.registerCommand(readMatrixCommand.getName(), &readMatrixCommand, [&matrices]() -> ContextCommand * {
-      // Essa função lambda é responsável por ler o que é preciso do usuário
-      // nesse caso: o nome do arquivo
-      // para evitar problemas, é bom fazer um loop infinito até que o usuário digite um nome de arquivo válido
-      bool hasFiles = false;
-      std::string input;
-      for (const auto& entry : std::filesystem::directory_iterator("Files")) {
-        if (std::filesystem::is_regular_file(entry)) {  // Verifica se é um arquivo (não uma subpasta)
-            hasFiles = true;
-            break;
+      ValidationUtils::verifyIfThereAreFiles();
+
+      std::string namefile = getValidString(AskFileName, { [&](const std::string &value) {
+        if (std::filesystem::exists("Files/" + value + ".txt")) {
+          throw InvalidArgumentException(Messages::fileNotFoundMessage());
         }
-      }
+      }});
 
-      if (!hasFiles) {
-        throw NoMatricesException("Nao existem arquivos na pasta Files/. Por favor, crie pelo meno um.");
-      }
-      
-      while(true){
-        std::cout << "Digite um nome de arquivo: ";
-        getline(std::cin, input);
-
-        if (std::filesystem::exists("Files/" + input + ".txt")){
-          std::cout << "Arquivo não encontrado. Certifique-se de colocar a extensao do arquivo\n";
-        } else {
-          break;
-        }
-      }
-
-      return new ReadMatrixContextCommand(input, matrices);
+      return new ReadMatrixContextCommand(namefile, matrices);
     });
 
   while (true) {
