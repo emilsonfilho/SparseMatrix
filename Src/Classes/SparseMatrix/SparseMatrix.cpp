@@ -101,10 +101,7 @@ double SparseMatrix::getElement(int row, int col) const {
 }
 
 void SparseMatrix::InsertMatriz(int row, int col, float value) {
-    if (row <= 0 || row > numRows || col <= 0 || col > numCols) {
-      std::cerr << "Erro: Posição ";
-      return;
-    }
+    ValidationUtils::verifyValidIndexes(row, col, numRows, numCols);
 
     if (value == 0) return;
     
