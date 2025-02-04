@@ -1,20 +1,5 @@
 #include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 
-Iterator SparseMatrix::beforeBegin() { return Iterator(head); }
-Iterator SparseMatrix::beforeBegin() const { return Iterator(head); }
-
-Iterator SparseMatrix::beginRow() { return Iterator(head->getDown()); }
-Iterator SparseMatrix::beginRow() const { return Iterator(head->getDown()); }
-
-Iterator SparseMatrix::getFirstElementInCol(int col) {
-  Iterator it = beforeBegin();
-
-  while (it.getPointer()->getCol() < col) it.nextInRow(); // Nós sentinelas sempre tem a coluna
-  it.nextInCol();
-
-  return it;
-}
-
 SparseMatrix::SparseMatrix(int numRows, int numCols) {
   ValidationUtils::verifyRowCol(numRows, numCols);
 
@@ -162,19 +147,6 @@ void SparseMatrix::InsertMatriz(int row, int col, float value) {
     // Inserindo na coluna
     prevCol->setDown(novo);
     novo->setDown(currentCol);
-}
-
-void SparseMatrix::insertOrAdd(int row, int col, double value) {
-  if (getElement(row, col) != 0) {
-    Node *current = head->getDown();
-    while (current->getRow() != row) current = current->getDown();
-
-    while (current->getCol() < col) current = current->getNext();
-
-    current->setValue(current->getValue() + value);
-  } else {
-    InsertMatriz(row, col, value);
-  }
 }
 
 SparseMatrix::~SparseMatrix() {

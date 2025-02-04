@@ -8,39 +8,16 @@ SparseMatrix *multiply(SparseMatrix *matrixA, SparseMatrix *matrixB) {
         return result;
     }
     
-    std::cout << "teste\n" << std::flush;
-
-    Iterator begin = matrixA->beginRow();
-    Iterator beforeBegin = matrixA->beforeBegin();
-
-    while (begin != beforeBegin) {
-        int i = begin.getPointer()->getRow();
-
-        Iterator aCurrent = begin;
-        aCurrent.nextInRow(); // percorrer as linhas
-
-        while (aCurrent != begin) {
-            int k = aCurrent.getPointer()->getCol();
-            double valueA = *aCurrent;
-
-            Iterator bCurrent = matrixB->getFirstElementInCol(k);
-            while (bCurrent.getPointer()->getRow() != 0) {
-                int j = bCurrent.getPointer()->getRow();
-                double valueB = *bCurrent;
-                double value = valueA * valueB;
-
-                if (value != 0) {
-                    std::cout << "entrei aqui?\n";
-                    result->insertOrAdd(i, j, value);
-                }
-
-                bCurrent.nextInCol();
+    for (int i = 1; i <= matrixA->getNumRows(); i++) {
+        for (int j = 1; j <= matrixB->getNumCols(); j++) {
+            double sum = 0;
+            for (int k = 1; k <= matrixA->getNumCols(); k++) {
+                sum += matrixA->getElement(i, k) * matrixB->getElement(k, j);
             }
-
-            aCurrent.nextInRow();
+            if (sum != 0) {
+                result->InsertMatriz(i, j, sum);
+            }
         }
-
-        begin.nextInCol();
     }
 
     return result;
