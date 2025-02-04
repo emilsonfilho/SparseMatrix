@@ -9,6 +9,7 @@
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
 #include "Includes/CommandPattern/Commands/GetCommand.hpp"
 #include "Includes/CommandPattern/Commands/ReadMatrixCommand.hpp"
+#include "Includes/CommandPattern/Commands/MultiplyCommand.hpp"
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
@@ -29,6 +30,7 @@ int main() {
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
   GetCommand getCommand("get", "exibe um determinado elemento de uma matriz");
   ReadMatrixCommand readMatrixCommand("read", "le uma matriz determinada por um arquivo");
+  MultiplyCommand multiplyCommand("multiply", "multiplica duas matrizes");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
   invoker.registerCommand(
@@ -50,16 +52,25 @@ int main() {
   });
     
   invoker.registerCommand(readMatrixCommand.getName(), &readMatrixCommand, [&matrices]() -> ContextCommand * {
-      ValidationUtils::verifyIfThereAreFiles();
+    ValidationUtils::verifyIfThereAreFiles();
 
-      std::string namefile = getValidString(AskFileName, { [&](const std::string &value) {
-        if (std::filesystem::exists("Files/" + value + ".txt")) {
-          throw InvalidArgumentException(Messages::fileNotFoundMessage());
-        }
-      }});
+    std::string namefile = getValidString(AskFileName, { [&](const std::string &value) {
+      if (std::filesystem::exists("Files/" + value + ".txt")) {
+        throw InvalidArgumentException(Messages::fileNotFoundMessage());
+      }
+    }});
 
-      return new ReadMatrixContextCommand(namefile, matrices);
-    });
+    return new ReadMatrixContextCommand(namefile, matrices);
+  });
+
+  invoker.registerCommand(multiplyCommand.getName(), &multiplyCommand, [&matrices]() -> ContextCommand * {
+    ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
+
+    int index1 = getValidNumber(AskFirstMatrixNumber, { [&](int value) { ValidationUtils::verifyValidIndexInVector(value, matrices.size()); } });
+    int index2 = getValidNumber(AskSecondMatrixNumber, { [&](int value) { ValidationUtils::verifyValidIndexInVector(value, matrices.size()); } });
+
+    return new MultiplyContextCommand(index1, index2, matrices);
+  });
 
   while (true) {
     try {

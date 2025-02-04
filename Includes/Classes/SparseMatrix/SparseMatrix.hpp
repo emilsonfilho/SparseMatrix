@@ -14,6 +14,14 @@ private:
 public:
   SparseMatrix() = default;
 
+  Iterator beforeBegin();
+  Iterator beforeBegin() const;
+
+  Iterator beginRow();
+  Iterator beginRow() const;
+
+  Iterator getFirstElementInCol(int col);
+
   /**
    * @brief Cria a estrutura para uma matriz esparsa útil
    *
@@ -67,6 +75,8 @@ public:
   double getElement(int row, int col) const;
 
   void InsertMatriz(int row, int col, float value);
+
+  void insertOrAdd(int row, int col, double value);
 
   /**
    * @brief Destrutor de uma matrix
