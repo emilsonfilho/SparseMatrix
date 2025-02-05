@@ -9,7 +9,8 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o $(BIN)/GetCommand.o $(BIN)/GetContextCommand.o $(BIN)/NoMatricesException.o $(BIN)/GetValidNumber.o $(BIN)/ReadMatrixContextCommand.o $(BIN)/ReadMatrixCommand.o $(BIN)/ReadMatrices.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o $(BIN)/GetCommand.o $(BIN)/GetContextCommand.o $(BIN)/NoMatricesException.o $(BIN)/GetValidNumber.o $(BIN)/ReadMatrixContextCommand.o $(BIN)/ReadMatrixCommand.o $(BIN)/ReadMatrices.o $(BIN)/GetValidString.o $(BIN)/MultiplyCommand.o $(BIN)/MultiplyContextCommand.o $(BIN)/MultiplyMatrices.o
+
 
 CLASSES = $(SRC)/Classes
 COMMAND_PATTERN = $(SRC)/CommandPattern
@@ -89,7 +90,6 @@ $(BIN)/NoMatricesException.o: $(SRC)/Exceptions/NoMatricesException.cpp
 $(BIN)/GetValidNumber.o: $(UTILS)/Tools/GetValidNumber.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
-#  $(BIN)/ReadMatrixCommand.o $(BIN)/ReadMatrices.o
 $(BIN)/ReadMatrixContextCommand.o: $(COMMAND_PATTERN)/Contexts/ReadMatrixContextCommand.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
@@ -99,6 +99,18 @@ $(BIN)/ReadMatrixCommand.o: $(COMMAND_PATTERN)/Commands/ReadMatrixCommand.cpp
 $(BIN)/ReadMatrices.o: $(UTILS)/Operations/ReadMatrices.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 	
+$(BIN)/GetValidString.o: $(UTILS)/Tools/GetValidString.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/MultiplyCommand.o: $(COMMAND_PATTERN)/Commands/MultiplyCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/MultiplyContextCommand.o: $(COMMAND_PATTERN)/Contexts/MultiplyContextCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/MultiplyMatrices.o: $(UTILS)/Operations/MultiplyMatrices.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
 # $(BIN)/teste.o: test.cpp
 # 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

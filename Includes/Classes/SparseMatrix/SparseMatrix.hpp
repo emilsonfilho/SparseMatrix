@@ -66,6 +66,15 @@ public:
    */
   double getElement(int row, int col) const;
 
+  /**
+   * @brief Insere um elemento na matriz
+   * 
+   * @param row Linha do elemento a ser inserido
+   * @param col Coluna do elemento a ser inserido
+   * @param value Valor do elemento a ser inserido
+   * 
+   * @note Complexidade O(n+m)
+   */
   void InsertMatriz(int row, int col, float value);
 
   /**

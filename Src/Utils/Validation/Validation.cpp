@@ -79,4 +79,14 @@ void verifyIfMatrixArrayIsEmpty(int size) {
   if (size == 0)
     throw NoMatricesException(Messages::emptyMatricesArrayMessage());
 }
+
+void verifyIfThereAreFiles() {
+  for (const auto &entry : std::filesystem::directory_iterator("Files")) {
+    if (std::filesystem::is_regular_file(entry)) { // Verifica se é um arquivo (não uma subpasta)
+      return;
+    }
+  }
+
+  throw NoMatricesException(Messages::noFilesMessage());
+}
 } // namespace ValidationUtils

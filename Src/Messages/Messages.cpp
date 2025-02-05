@@ -71,4 +71,12 @@ std::string differentRowsMessage() {
 std::string emptyMatricesArrayMessage() {
   return "Nao existe nenhuma matriz no nosso sistema para efetuar essa operacao. Considere criar uma primeiro";
 }
+
+std::string noFilesMessage() {
+  return "Nao existem arquivos na pasta Files/. Por favor, crie pelo meno um";
+}
+
+std::string fileNotFoundMessage() {
+  return "Arquivo nao encontrado. Certifique-se de colocar a extensao do arquivo";
+}
 } // namespace Messages

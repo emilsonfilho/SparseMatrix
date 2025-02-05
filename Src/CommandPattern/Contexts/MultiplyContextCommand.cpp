@@ -1,5 +1,3 @@
-#include "../../../Includes/CommandPattern/Contexts/MultiplyMatrixContextCommand.hpp"
+#include "../../../Includes/CommandPattern/Contexts/MultiplyContextCommand.hpp"
 
-
-MultiplyMatrixContextCommand::MultiplyMatrixContextCommand(MatrixPtrArrayRef matrixA, MatrixPtrArrayRef matrixB) 
-                                                : MatrixA(MatrixA), matrixB(matrixB) {}
+MultiplyContextCommand::MultiplyContextCommand(int indexMatrixA, int indexMatrixB, MatrixPtrArrayRef matrices): indexMatrixA(indexMatrixA), indexMatrixB(indexMatrixB), matrices(matrices) {}

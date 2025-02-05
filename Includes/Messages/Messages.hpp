@@ -103,6 +103,16 @@ std::string differentRowsMessage();
  * @brief Mensagem de vetor de matrizes nulo
  */
 std::string emptyMatricesArrayMessage();
+
+/**
+ * @brief Mensagem de arquivo não encontrado
+ */
+std::string noFilesMessage();
+
+/**
+ * @brief Mensagem de arquivo não encontrado
+ */
+std::string fileNotFoundMessage();
 } // namespace Messages
 
 #endif
