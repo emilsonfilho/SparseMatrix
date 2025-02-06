@@ -11,6 +11,6 @@
 #include <iostream>
 #include <sstream>
 
-SparseMatrix SumMatrix(SparseMatrix *matricesA, SparseMatrix *matricesB);
+SparseMatrix *SumMatrix(SparseMatrix *matricesA, SparseMatrix *matricesB);
 
 #endif

@@ -9,7 +9,7 @@ SRC = Src
 BIN = Bin
 
 # Objetos
-OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o $(BIN)/GetCommand.o $(BIN)/GetContextCommand.o $(BIN)/NoMatricesException.o $(BIN)/GetValidNumber.o $(BIN)/ReadMatrixContextCommand.o $(BIN)/ReadMatrixCommand.o $(BIN)/ReadMatrices.o $(BIN)/GetValidString.o $(BIN)/MultiplyCommand.o $(BIN)/MultiplyContextCommand.o $(BIN)/MultiplyMatrices.o
+OBJ = $(BIN)/Node.o $(BIN)/Iterator.o $(BIN)/HelpCommand.o $(BIN)/Invoker.o $(BIN)/Validation.o $(BIN)/Messages.o $(BIN)/Main.o $(BIN)/InvalidColumnException.o $(BIN)/InvalidRowException.o $(BIN)/InvalidCommandException.o $(BIN)/SparseMatrix.o $(BIN)/DifferentColsException.o $(BIN)/AreSameValues.o $(BIN)/DifferentRowsException.o $(BIN)/PrintMatrixCommand.o $(BIN)/PrintMatrixContextCommand.o $(BIN)/IgnoreCin.o $(BIN)/InvalidArgumentException.o $(BIN)/ArgumentOutOfRangeException.o $(BIN)/GetCommand.o $(BIN)/GetContextCommand.o $(BIN)/NoMatricesException.o $(BIN)/GetValidNumber.o $(BIN)/ReadMatrixContextCommand.o $(BIN)/ReadMatrixCommand.o $(BIN)/ReadMatrices.o $(BIN)/GetValidString.o $(BIN)/MultiplyCommand.o $(BIN)/MultiplyContextCommand.o $(BIN)/MultiplyMatrices.o $(BIN)/SumMatrices.o $(BIN)/SumMatrixCommand.o $(BIN)/SumMatrixContextCommand.o
 
 
 CLASSES = $(SRC)/Classes
@@ -109,6 +109,15 @@ $(BIN)/MultiplyContextCommand.o: $(COMMAND_PATTERN)/Contexts/MultiplyContextComm
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 $(BIN)/MultiplyMatrices.o: $(UTILS)/Operations/MultiplyMatrices.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/SumMatrices.o: $(UTILS)/Operations/SumMatrices.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/SumMatrixCommand.o: $(COMMAND_PATTERN)/Commands/SumMatrixCommand.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
+
+$(BIN)/SumMatrixContextCommand.o: $(COMMAND_PATTERN)/Contexts/SumMatrixContextCommand.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDETAGS) -c $< -o $@
 
 # $(BIN)/teste.o: test.cpp

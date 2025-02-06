@@ -1,83 +1,57 @@
 #include "../../../Includes/Utils/Operations/SumMatrices.hpp"
 #include <iostream>
 #include <fstream>
-
-
-
+using namespace std;
 #include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 
-SparseMatrix SumMatrix(MatrixPtrArrayRef matricesA, MatrixPtrArrayRef matricesB) {
-    std::ifstream Arquivo(NameFile);
+SparseMatrix *SumMatrix(SparseMatrix* matricesA, SparseMatrix* matricesB) {
 
-    if (!Arquivo) { 
-        std::cerr << "Erro ao abrir o arquivo: " << NameFile << std::endl;
-         // crie erro correto
+    Node* currentA = matricesA->getHead()->getDown()->getNext();
+    Node* currentB = matricesB->getHead()->getDown()->getNext();
+    SparseMatrix *result = new SparseMatrix(matricesA->getNumRows(), matricesB->getNumCols());
+    cout << "entrou" << endl;
+
+    while(currentA->getRow() != 0 && currentB->getRow() != 0){
+        bool i = currentA->getCol() == 0, j = currentB->getCol() == 0; 
+        while(!(i && j)){
+            if(i == true){
+                cout << "entrou i true" << endl;
+                result->InsertMatriz(currentB->getRow(), currentB->getCol(), currentB->getValue());
+                currentB = currentB->getNext();
+            }
+            else if(j == true){
+                cout << "entrou j true" << endl;
+                result->InsertMatriz(currentA->getRow(), currentA->getCol(), currentA->getValue());
+                currentA = currentA->getNext();
+            }
+            else if(currentA->getCol() == currentB->getCol()){
+                cout << "entrou igual true" << endl;
+
+                result->InsertMatriz(currentA->getRow(), currentA->getCol(), currentA->getValue() + currentB->getValue());
+                currentA = currentA->getNext();
+                currentB = currentB->getNext();
+            }
+            else if(currentA->getCol() > currentB->getCol() ){
+                cout << "entrou A maior true" << endl;
+
+                result->InsertMatriz(currentB->getRow(), currentB->getCol(), currentB->getValue());
+                currentB = currentB->getNext();
+            }
+            else{
+                cout << "entrou B maior true" << endl;
+                result->InsertMatriz(currentA->getRow(), currentA->getCol(), currentA->getValue());
+                currentA = currentA->getNext();
+            }
+
+            if(currentA->getCol() == 0)i = true;
+            if(currentB->getCol() == 0)j = true;
+
+        }
+
+        currentA = currentA->getDown()->getNext();
+        currentB = currentB->getDown()->getNext();
     }
-
-    int numCols, numRows;
-    int col, row;
-    float value;
-
-    Arquivo >> numRows >> numCols;
-    SparseMatrix* Matrizz = new SparseMatrix(numRows, numCols);
-    while (Arquivo >> row >> col >> value) {
-
-    // verificação muito possivelmente desnecessaria
-    if(row <= 0 || row > numRows || col <= 0 || col > numCols) {
-        std::cerr << "Erro: Posição ";
-        return;
-    }
-
-    // percorre os sentinelas ate encontrar a linha
-    // do elemento que vai ser somado
-    Node *rowSentinela = getHead()->getDown();
-    while (rowSentinela->getRow() != row) {
-        rowSentinela = rowSentinela->getDown();
-    }
-
-
-    // percorre os sentinelas ate encontrar a coluna
-    // do elemento que vai ser somado
-    Node *colSentinela = getHead()->getNext();
-    while (colSentinela->getCol() != col) {
-        colSentinela = colSentinela->getNext();
-    }
-
-    // percore a linha ate chegar na coluna do elemento
-    Node *prevRow = rowSentinela;
-    Node *currentRow = rowSentinela->getNext();
-    while (currentRow != rowSentinela && currentRow->getCol() < col) {
-        prevRow = currentRow;
-        currentRow = currentRow->getNext();
-    }
-
-    // percore a coluna ate chegar na coluna do elemento
-    Node *prevCol = colSentinela;
-    Node *currentCol = colSentinela->getDown();
-    while (currentCol != colSentinela && currentCol->getRow() < row) {
-        prevCol = currentCol;
-        currentCol = currentCol->getDown();
-    }
-
-    
-    if (currentRow != rowSentinela && currentRow->getCol() == col) {
-        currentRow->setValue(value);
-        return;
-    }
-
-    // Criando o novo nó
-    Node *novo = new Node(row, col, value, nullptr, nullptr);
-
-    // Inserindo na linha
-    prevRow->setNext(novo);
-    novo->setNext(currentRow);
-
-    // Inserindo na coluna
-    prevCol->setDown(novo);
-    novo->setDown(currentCol);
-
+   
+    return result;
     }
     
-
-    matrices.push_back(Matrizz);
-}

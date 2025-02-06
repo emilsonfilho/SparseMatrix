@@ -1,4 +1,4 @@
 #include "../../../Includes/CommandPattern/Contexts/SumMatrixContextCommand.hpp"
 
-SumMatrixContextCommand::SumMatrixContextCommand(MatrixPtrArrayRef matrixA, MatrixPtrArrayRef matrixB) 
-                                                : matrixA(matrixA), matrixB(matrixB) {}
+SumMatrixContextCommand::SumMatrixContextCommand(MatrixPtrArrayRef matrices, int indexMatrixA, int indexMatrixB) 
+                                                : matrices(matrices), indexMatrixA(indexMatrixA), indexMatrixB(indexMatrixB) {}

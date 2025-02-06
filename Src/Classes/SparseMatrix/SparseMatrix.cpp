@@ -100,7 +100,7 @@ double SparseMatrix::getElement(int row, int col) const {
   return *it;
 }
 
-void SparseMatrix::InsertMatriz(int row, int col, float value) {
+void SparseMatrix::InsertMatriz(int row, int col, double value) {
     ValidationUtils::verifyValidIndexes(row, col, numRows, numCols);
 
     if (value == 0) return;

@@ -7,21 +7,25 @@
 
 #include "../../../Defs/MatrixPtrArrayRef.hpp"
 #include "ContextCommand.hpp"
+#include "../../Utils/Operations/SumMatrices.hpp"
 
 class SumMatrixContextCommand : public ContextCommand {
 public:
-MatrixPtrArrayRef matrixA;
-MatrixPtrArrayRef matrixB;
+MatrixPtrArrayRef matrices;
+int indexMatrixA;
+int indexMatrixB;
 public: 
 
 /**
    * @brief Construtor do contexto para abrir arquiivo texto
    *
-   * @param MatrixA 
+   * @param Matrices 
    * 
-   * @param matrixB 
+   * @param indexMatrixA
+   * 
+   * @param indexMatrixB
    */
-  SumMatrixContextCommand(MatrixPtrArrayRef matrixA, MatrixPtrArrayRef matrixB);
+  SumMatrixContextCommand(MatrixPtrArrayRef matrices, int indexMatrixA, int indexMatrixB);
 
   
 };
