@@ -7,6 +7,11 @@ void MultiplyCommand::execute(ContextCommand *context) const {
     
     if (ctx) {
         SparseMatrix *result = multiply(ctx->matrices[ctx->indexMatrixA], ctx->matrices[ctx->indexMatrixB]);
+
+        if (!result) {
+            return;
+        }
+
         ctx->matrices.push_back(result);
 
         std::cout << "Matriz resultado adicionada na posicao " << ctx->matrices.size() - 1 << std::endl;

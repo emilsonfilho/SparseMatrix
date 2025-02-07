@@ -60,6 +60,7 @@ std::string negativeIndexMessage(int number) {
   os << "O indice " << number << " eh invalido pois eh negativo";
   return os.str();
 }
+
 std::string differentColsMessage() {
   return "Nao eh possivel comparar linhas com diferentes colunas";
 }
@@ -78,5 +79,9 @@ std::string noFilesMessage() {
 
 std::string fileNotFoundMessage() {
   return "Arquivo nao encontrado. Certifique-se de colocar a extensao do arquivo";
+}
+
+std::string incompatibleDimensionsMessage() {
+  return "As matrizes não podem ser multiplicadas: o número de colunas da primeira matriz não corresponde ao número de linhas da segunda matriz.";
 }
 } // namespace Messages

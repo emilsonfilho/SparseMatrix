@@ -89,4 +89,9 @@ void verifyIfThereAreFiles() {
 
   throw NoMatricesException(Messages::noFilesMessage());
 }
+
+void verifyMatricesAreMultipliable(int rows, int cols) {
+  if (rows != cols)
+    throw InvalidMatrixOperationException(Messages::incompatibleDimensionsMessage());
+}
 } // namespace ValidationUtils

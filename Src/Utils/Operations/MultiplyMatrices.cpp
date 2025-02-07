@@ -1,12 +1,10 @@
 #include "../../../Includes/Utils/Operations/MultiplyMatrices.hpp"
 
 SparseMatrix *multiply(SparseMatrix *matrixA, SparseMatrix *matrixB) {
+    ValidationUtils::verifyMatricesAreMultipliable(matrixA->getNumCols(), matrixB->getNumRows());
+
     SparseMatrix* result = new SparseMatrix(matrixA->getNumRows(), matrixB->getNumCols());
 
-    if (matrixA->getNumCols() != matrixB->getNumRows()) {
-        std::cout << "Error: The number of columns of the first matrix must be equal to the number of rows of the second matrix" << std::endl;
-        return result;
-    }
     
     for (int i = 1; i <= matrixA->getNumRows(); i++) {
         for (int j = 1; j <= matrixB->getNumCols(); j++) {

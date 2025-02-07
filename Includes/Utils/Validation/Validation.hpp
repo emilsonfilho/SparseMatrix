@@ -1,15 +1,17 @@
 #ifndef VALIDATION_UTILS_HPP
 #define VALIDATION_UTILS_HPP
 
-#include "../../../Includes/Classes/Node/Node.hpp"
-#include "../../../Includes/Messages/Messages.hpp"
+#include "../../Classes/Node/Node.hpp"
+#include "../../Messages/Messages.hpp"
 #include "../../Exceptions/ArgumentOutOfRangeException.hpp"
 #include "../../Exceptions/DifferentColsException.hpp"
 #include "../../Exceptions/DifferentRowsException.hpp"
 #include "../../Exceptions/InvalidColumnException.hpp"
 #include "../../Exceptions/InvalidRowException.hpp"
 #include "../../Exceptions/NoMatricesException.hpp"
+#include "../../Exceptions/InvalidMatrixOperationException.hpp"
 #include "../Complements/AreSameValues.hpp"
+
 
 #include <filesystem>
 
@@ -124,6 +126,16 @@ void verifyIfMatrixArrayIsEmpty(int size);
  * Se não houver, lança uma exceção
  */
 void verifyIfThereAreFiles();
+
+/**
+ * @brief Verifica se duas matrices são multiplicáveis
+ * 
+ * Duas matrizes são consideradas multiplicáveis se o número de colunas na primeira corresponde ao número de linhas da segunda
+ * 
+ * @param rows Número de linhas da primeira matriz
+ * @param cols Número de colunas da segunda matriz
+ */
+void verifyMatricesAreMultipliable(int rows, int cols);
 } // namespace ValidationUtils
 
 #endif

@@ -113,6 +113,11 @@ std::string noFilesMessage();
  * @brief Mensagem de arquivo não encontrado
  */
 std::string fileNotFoundMessage();
+
+/**
+ * @brief Mensagem de dimensões incompatíveis
+ */
+std::string incompatibleDimensionsMessage();
 } // namespace Messages
 
 #endif
