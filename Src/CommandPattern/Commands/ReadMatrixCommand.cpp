@@ -8,6 +8,8 @@ void ReadMatrixCommand::execute(ContextCommand *context) const {
         SparseMatrix *matrix = new SparseMatrix();
         ReadMatrices(ctx->nameMatriz, matrix);
         ctx->matrices.push_back(matrix);
+
+        std::cout << "Matriz adicionada na posicao " << ctx->matrices.size() - 1 << std::endl;
     }
 }
 
