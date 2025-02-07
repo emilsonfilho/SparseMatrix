@@ -58,7 +58,7 @@ int main() {
     ValidationUtils::verifyIfThereAreFiles();
 
     std::string namefile = getValidString(AskFileName, { [&](const std::string &value) {
-      if (!std::filesystem::exists("Files/" + value + ".txt")) {
+      if (!std::filesystem::exists(Path + value + Extension)) {
         throw InvalidArgumentException(Messages::fileNotFoundMessage());
       }
     }});

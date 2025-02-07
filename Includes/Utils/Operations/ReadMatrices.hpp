@@ -5,6 +5,7 @@
 #include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 #include "../../../Includes/Utils/Operations/ReadMatrices.hpp"
 #include "../../../Defs/MatrixPtrArrayRef.hpp"
+#include "../../../Defs/Path.hpp"
 
 #include <string>
 #include <fstream>

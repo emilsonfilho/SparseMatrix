@@ -1,7 +1,7 @@
 #include "../../../Includes/Utils/Operations/ReadMatrices.hpp"
 
 void ReadMatrices(const std::string &NameFile, SparseMatrix *&matrixMem) {
-    std::ifstream Arquivo("Files/" + NameFile + ".txt");
+    std::ifstream Arquivo(Path + NameFile + Extension);
 
     if (!Arquivo) { 
         std::cerr << "Erro ao abrir o arquivo: " << NameFile << std::endl;
