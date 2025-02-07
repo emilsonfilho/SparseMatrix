@@ -84,4 +84,10 @@ std::string fileNotFoundMessage() {
 std::string incompatibleDimensionsMessage() {
   return "As matrizes não podem ser multiplicadas: o número de colunas da primeira matriz não corresponde ao número de linhas da segunda matriz.";
 }
+
+std::string fileOpenErrorMessage(const std::string& filename) {
+  std::ostringstream os;
+  os << "Erro ao abrir o arquivo: " << filename;
+  return os.str();
+}
 } // namespace Messages

@@ -118,6 +118,13 @@ std::string fileNotFoundMessage();
  * @brief Mensagem de dimensões incompatíveis
  */
 std::string incompatibleDimensionsMessage();
+
+/**
+ * @brief Mensagem de erro ao abrir arquivob
+ * 
+ * @param filename Nome do arquivo
+ */
+std::string fileOpenErrorMessage(const std::string& filename);
 } // namespace Messages
 
 #endif

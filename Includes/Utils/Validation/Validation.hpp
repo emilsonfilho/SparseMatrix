@@ -10,6 +10,7 @@
 #include "../../Exceptions/InvalidRowException.hpp"
 #include "../../Exceptions/NoMatricesException.hpp"
 #include "../../Exceptions/InvalidMatrixOperationException.hpp"
+#include "../../Exceptions/FileIOException.hpp"
 #include "../Complements/AreSameValues.hpp"
 
 
@@ -136,6 +137,7 @@ void verifyIfThereAreFiles();
  * @param cols Número de colunas da segunda matriz
  */
 void verifyMatricesAreMultipliable(int rows, int cols);
+
 } // namespace ValidationUtils
 
 #endif
