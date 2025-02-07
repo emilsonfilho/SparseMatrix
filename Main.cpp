@@ -95,6 +95,12 @@ int main() {
         invoker.showHelp();
         std::cout << "exit - fecha a aplicacao\n";
       } else if (input == "exit") {
+        for (auto matrix : matrices) {
+          delete matrix;
+        }
+
+        matrices.clear();
+        
         break;
       } else {
         invoker.executeCommand(input);
