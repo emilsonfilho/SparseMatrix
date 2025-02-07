@@ -75,7 +75,7 @@ public:
    * 
    * @note Complexidade O(n+m)
    */
-  void InsertMatriz(int row, int col, float value);
+  void InsertMatriz(int row, int col, double value);
 
   /**
    * @brief Destrutor de uma matrix
