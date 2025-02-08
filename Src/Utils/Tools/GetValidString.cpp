@@ -7,6 +7,7 @@ std::string getValidString(const std::string &prompt, const StringValidatorArray
         try {
             std::cout << prompt;
             getline(std::cin, str);
+            str = trim(str);
 
             for (const auto& validate : validations) {
                 validate(str);

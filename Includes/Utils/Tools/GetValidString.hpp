@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+#include "Trim.hpp"
 #include "../../../Defs/StringValidatorArray.hpp"
 #include "../../Exceptions/InvalidArgumentException.hpp"
 #include "../../Messages/Messages.hpp"

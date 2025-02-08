@@ -58,9 +58,11 @@ int main() {
     ValidationUtils::verifyIfThereAreFiles();
 
     std::string namefile = getValidString(AskFileName, { [&](const std::string &value) {
-      if (!std::filesystem::exists(Path + value + Extension)) {
+      if (value == "")
+        throw InvalidArgumentException(Messages::emptyInputMessage());
+    }, [&](const std::string &value) {
+      if (!std::filesystem::exists(Path + value + Extension))
         throw InvalidArgumentException(Messages::fileNotFoundMessage());
-      }
     }});
 
     return new ReadMatrixContextCommand(namefile, matrices);
@@ -89,6 +91,7 @@ int main() {
       std::string input;
       std::cout << "$";
       std::getline(std::cin, input);
+      input = trim(input);
 
       if (input == "help") {
         std::cout << "help - exibe uma lista de comandos disponiveis\n";

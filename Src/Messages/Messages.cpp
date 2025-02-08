@@ -90,4 +90,8 @@ std::string fileOpenErrorMessage(const std::string& filename) {
   os << "Erro ao abrir o arquivo: " << filename;
   return os.str();
 }
+
+std::string emptyInputMessage() {
+  return "Entrada vazia. Por favor, digite algo";
+}
 } // namespace Messages

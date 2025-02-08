@@ -125,6 +125,11 @@ std::string incompatibleDimensionsMessage();
  * @param filename Nome do arquivo
  */
 std::string fileOpenErrorMessage(const std::string& filename);
+
+/**
+ * @brief Mensagem de que o usuário não digitou nada
+ */
+std::string emptyInputMessage();
 } // namespace Messages
 
 #endif
