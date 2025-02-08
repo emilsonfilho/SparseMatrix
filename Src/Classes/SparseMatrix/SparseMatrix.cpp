@@ -42,7 +42,7 @@ void SparseMatrix::print() {
   while (it != Iterator(head)) {
     if (it.getPointer()->getNext() == it.getPointer()) {
       for (int i = 0; i < numCols; i++) {
-        os <<std::setw(6) << "0";
+        os << std::setw(6) << "0";
       }
     } else {
       Node *nextNode = it.getPointer()->getNext();
