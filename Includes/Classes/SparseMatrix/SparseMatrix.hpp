@@ -2,6 +2,7 @@
 #define SPARSE_MATRIX_HPP
 
 #include <iostream>
+#include <iomanip>
 
 #include "../Iterator/Iterator.hpp"
 
