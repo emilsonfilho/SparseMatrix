@@ -5,24 +5,23 @@
 #include <fstream>
 #include <string>
 
-#include "../../../Defs/MatrixPtrArrayRef.hpp"
+#include "../../../Defs/MatrixInfoVectorRef.hpp"
 #include "../../Utils/Operations/ReadMatrices.hpp"
 #include "ContextCommand.hpp"
 
 class ReadMatrixContextCommand : public ContextCommand {
 public:
-std::string nameMatriz;
-MatrixPtrArrayRef matrices;
+  std::string nameMatriz;
+  MatrixInfoVectorRef matrices;
 
-public: 
-/**
+  /**
    * @brief Construtor do contexto para abrir arquiivo texto
    *
    * @param nameMatriz nome.txt para ser lido
    * 
    * @param matrix Vetor com as matrizes do sistema
    */
-  ReadMatrixContextCommand(const std::string &nameMatriz, MatrixPtrArrayRef matrices);
+  ReadMatrixContextCommand(const std::string &nameMatriz, MatrixInfoVectorRef matrices);
 
   //ReadMatrixContextCommand(std::string caminho);
 };

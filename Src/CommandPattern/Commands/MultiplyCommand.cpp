@@ -6,9 +6,11 @@ void MultiplyCommand::execute(ContextCommand *context) const {
     auto *ctx = dynamic_cast<MultiplyContextCommand *>(context);
     
     if (ctx) {
-        SparseMatrix *result = multiply(ctx->matrices[ctx->indexMatrixA], ctx->matrices[ctx->indexMatrixB]);
+        MatrixInfo &infoA = ctx->matrices[ctx->indexMatrixA];
+        MatrixInfo &infoB = ctx->matrices[ctx->indexMatrixB];
+        SparseMatrix *result = multiply(infoA.matrix, infoB.matrix);
 
-        ctx->matrices.push_back(result);
+        ctx->matrices.emplace_back(result, formatOperationOrigin("multiplicacao", infoA.origin, infoB.origin));
 
         std::cout << "Matriz resultado adicionada na posicao " << ctx->matrices.size() - 1 << std::endl;
     }

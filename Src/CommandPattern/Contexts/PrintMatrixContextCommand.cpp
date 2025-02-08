@@ -1,5 +1,5 @@
 #include "../../../Includes/CommandPattern/Contexts/PrintMatrixContextCommand.hpp"
 
 PrintMatrixContextCommand::PrintMatrixContextCommand(
-    int index, MatrixPtrArrayRef matrices)
+    int index, const MatrixInfoVectorRef matrices)
     : index(index), matrices(matrices) {}

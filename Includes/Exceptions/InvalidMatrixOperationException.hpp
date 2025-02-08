@@ -5,7 +5,7 @@
 
 class InvalidMatrixOperationException : public std::runtime_error {
 public:
-    InvalidMatrixOperationException(const std::string &message);
+    explicit InvalidMatrixOperationException(const std::string &message);
 };
 
 #endif

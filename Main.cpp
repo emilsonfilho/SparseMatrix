@@ -5,12 +5,14 @@
 #include <filesystem>
 
 #include "Defs/UserQuestions.hpp"
+#include "Defs/MatrixInfo.hpp"
 
 #include "Includes/CommandPattern/Commands/PrintMatrixCommand.hpp"
 #include "Includes/CommandPattern/Commands/GetCommand.hpp"
 #include "Includes/CommandPattern/Commands/ReadMatrixCommand.hpp"
 #include "Includes/CommandPattern/Commands/MultiplyCommand.hpp"
 #include "Includes/CommandPattern/Commands/SumMatrixCommand.hpp"
+#include "Includes/CommandPattern/Commands/ShowCommand.hpp"
 #include "Includes/CommandPattern/Invoker/InvokerCommand.hpp"
 
 #include "Includes/Classes/SparseMatrix/SparseMatrix.hpp"
@@ -21,19 +23,18 @@
 #include "Includes/Utils/Tools/GetValidString.hpp"
 #include "Includes/Utils/Validation/Validation.hpp"
 
-
 #include "Includes/Utils/Operations/ReadMatrices.hpp"
 
 int main() {
   InvokerCommand invoker;
-  std::vector<SparseMatrix *> matrices;
+  std::vector<MatrixInfo> matrices;
 
   PrintMatrixCommand printCommand("print", "exibe a matriz na tela");
   GetCommand getCommand("get", "exibe um determinado elemento de uma matriz");
   ReadMatrixCommand readMatrixCommand("read", "le uma matriz determinada por um arquivo");
   MultiplyCommand multiplyCommand("multiply", "multiplica duas matrizes");
   SumMatrixCommand sumMatrixCommand("sum", "soma duas matrizes");
-  
+  ShowCommand showCommand("show", "mostra toodas as matrizes no sistema");
 
   // invoker.registerCommand(testCommand.getName(), &testCommand);
   invoker.registerCommand(
@@ -49,7 +50,7 @@ int main() {
     ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
 
     int index = getValidNumber(AskMatrixNumber, { [&](int value) { ValidationUtils::verifyValidIndexInVector(value, matrices.size()); } });
-    int row = getValidNumber(AskRow, { [&](int value) { ValidationUtils::verifyValidRowIndex(value, matrices[index]->getNumRows()); } }), col = getValidNumber(AskCol, { [&](int value) { ValidationUtils::verifyValidColIndex(value, matrices[index]->getNumCols()); } });
+    int row = getValidNumber(AskRow, { [&](int value) { ValidationUtils::verifyValidRowIndex(value, matrices[index].matrix->getNumRows()); } }), col = getValidNumber(AskCol, { [&](int value) { ValidationUtils::verifyValidColIndex(value, matrices[index].matrix->getNumCols()); } });
 
     return new GetContextCommand(row, col, index, matrices);
   });
@@ -86,6 +87,11 @@ int main() {
     return new SumMatrixContextCommand(matrices, index1, index2);
   }); 
 
+  invoker.registerCommand(showCommand.getName(), &showCommand, [&matrices]() -> ContextCommand * {
+    return new ShowContextCommand(matrices);
+  });
+  
+
   while (true) {
     try {
       std::string input;
@@ -98,8 +104,8 @@ int main() {
         invoker.showHelp();
         std::cout << "exit - fecha a aplicacao\n";
       } else if (input == "exit") {
-        for (auto matrix : matrices) {
-          delete matrix;
+        for (MatrixInfo& matrixInfo : matrices) {
+          delete matrixInfo.matrix;
         }
 
         matrices.clear();

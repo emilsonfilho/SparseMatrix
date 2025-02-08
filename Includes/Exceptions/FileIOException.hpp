@@ -5,7 +5,7 @@
 
 class FileIOException : public std::runtime_error {
 public:
-    FileIOException(const std::string& message);
+    explicit FileIOException(const std::string& message);
 };
 
 #endif

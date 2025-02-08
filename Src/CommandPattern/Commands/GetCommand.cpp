@@ -6,7 +6,7 @@ void GetCommand::execute(ContextCommand *context) const {
     auto *ctx = dynamic_cast<GetContextCommand *>(context);
 
     if (ctx) {
-        double element = ctx->matrices[ctx->index]->getElement(ctx->row, ctx->col);
+        double element = ctx->matrices[ctx->index].matrix->getElement(ctx->row, ctx->col);
         std::cout << element << std::endl;
     }
 }

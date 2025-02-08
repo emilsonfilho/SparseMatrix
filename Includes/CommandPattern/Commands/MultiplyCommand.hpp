@@ -3,6 +3,7 @@
 
 #include "../Contexts/MultiplyContextCommand.hpp"
 #include "../../Utils/Operations/MultiplyMatrices.hpp"
+#include "../../Utils/Complements/FormatOperationOrigin.hpp"
 #include "Command.hpp"
 
 class MultiplyCommand : public Command {

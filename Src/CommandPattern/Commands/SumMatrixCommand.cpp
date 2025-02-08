@@ -6,9 +6,11 @@ void SumMatrixCommand::execute(ContextCommand *context) const {
 
     if (ctx){
         // chama SumMatrizz
+        MatrixInfo &infoA = ctx->matrices[ctx->indexMatrixA];
+        MatrixInfo &infoB = ctx->matrices[ctx->indexMatrixB];
 
-        SparseMatrix *result = SumMatrix(ctx->matrices[ctx->indexMatrixA], ctx->matrices[ctx->indexMatrixB]);
-        ctx->matrices.push_back(result);
+        SparseMatrix *result = SumMatrix(infoA.matrix, infoB.matrix);
+        ctx->matrices.emplace_back(result, formatOperationOrigin("soma", infoA.origin, infoB.origin));
 
         std::cout << "Matriz resultado adicionada na posicao " << ctx->matrices.size() - 1 << std::endl;
     }
