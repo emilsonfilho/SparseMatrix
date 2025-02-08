@@ -92,6 +92,11 @@ void verifyIfThereAreFiles() {
 
 void verifyMatricesAreMultipliable(int rows, int cols) {
   if (rows != cols)
-    throw InvalidMatrixOperationException(Messages::incompatibleDimensionsMessage());
+    throw InvalidMatrixOperationException(Messages::notMultipliableMatrices());
+}
+
+void verifyMatricesAreSummable(int rowsA, int colsA, int rowsB, int colsB) {
+  if (rowsA != rowsB or colsA != colsB)
+    throw InvalidMatrixOperationException(Messages::notSummableMatrices());
 }
 } // namespace ValidationUtils

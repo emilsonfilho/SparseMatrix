@@ -138,6 +138,18 @@ void verifyIfThereAreFiles();
  */
 void verifyMatricesAreMultipliable(int rows, int cols);
 
+/**
+ * @brief Verifica se duas matrizes são somáveis
+ * 
+ * Duas matrizes são consideradas somáveis se possuem as mesmas dimensões, i.e., o mesmo número de linhas e o mesmo número de colunas
+ * 
+ * @param rowsA Quantidade de linhas na primeira matriz
+ * @param colsA Quantidade de colunas na primeira matriz
+ * @param rowsB Quantidade de linhas na segunda matriz
+ * @param colsB Quantidade de colunas na segunda matriz
+ */
+void verifyMatricesAreSummable(int rowsA, int colsA, int rowsB, int colsB);
+
 } // namespace ValidationUtils
 
 #endif

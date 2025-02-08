@@ -115,9 +115,14 @@ std::string noFilesMessage();
 std::string fileNotFoundMessage();
 
 /**
- * @brief Mensagem de dimensões incompatíveis
+ * @brief Mensagem de dimensões incompatíveis para multiplicação
  */
-std::string incompatibleDimensionsMessage();
+std::string notMultipliableMatrices();
+
+/**
+ * @brief Mensagem de dimensões incompatíveis para soma
+ */
+std::string notSummableMatrices();
 
 /**
  * @brief Mensagem de erro ao abrir arquivob

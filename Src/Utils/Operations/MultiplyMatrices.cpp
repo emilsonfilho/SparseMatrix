@@ -4,7 +4,6 @@ SparseMatrix *multiply(SparseMatrix *matrixA, SparseMatrix *matrixB) {
     ValidationUtils::verifyMatricesAreMultipliable(matrixA->getNumCols(), matrixB->getNumRows());
 
     SparseMatrix* result = new SparseMatrix(matrixA->getNumRows(), matrixB->getNumCols());
-
     
     for (int i = 1; i <= matrixA->getNumRows(); i++) {
         for (int j = 1; j <= matrixB->getNumCols(); j++) {
