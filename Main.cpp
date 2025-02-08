@@ -88,6 +88,8 @@ int main() {
   }); 
 
   invoker.registerCommand(showCommand.getName(), &showCommand, [&matrices]() -> ContextCommand * {
+    ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
+
     return new ShowContextCommand(matrices);
   });
   
