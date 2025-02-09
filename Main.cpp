@@ -1,7 +1,7 @@
 /**
  * Autores:
- * - Calebe Mesquita da Silva
- * - Francisco Emilson Santos Souza Filho - Matrículo 565685
+ * - Calebe Mesquita da Silva - Matrícula 566342
+ * - Francisco Emilson Santos Souza Filho - Matrícula 565685
  * Data: 09/02/2025
  *
  * Entrega do trabalho de implementação de Matrizes Esparsas com Listas
