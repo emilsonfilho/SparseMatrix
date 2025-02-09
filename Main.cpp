@@ -1,3 +1,18 @@
+/**
+ * Autores: 
+ * - Calebe Mesquita da Silva
+ * - Francisco Emilson Santos Souza Filho - Matrículo 565685
+ * Data: 09/02/2025
+ * 
+ * Entrega do trabalho de implementação de Matrizes Esparsas com Listas Encadeadas em C++
+ * 
+ * Disciplina: Estrutura de Dados
+ * Professor: Atílio Gomes
+ * 
+ * Bacharelandos em Ciência da Computação
+ * Universidade Federal do Ceará (UFC) - Campus Quixadá
+ */
+
 #include <filesystem>
 
 #include "Defs/UserQuestions.hpp"
@@ -24,7 +39,6 @@ int main() {
   SumMatrixCommand sumMatrixCommand("sum", "soma duas matrizes");
   ShowCommand showCommand("show", "mostra toodas as matrizes no sistema");
 
-  // invoker.registerCommand(testCommand.getName(), &testCommand);
   invoker.registerCommand(
       printCommand.getName(), &printCommand, [&matrices]() -> ContextCommand * {
         ValidationUtils::verifyIfMatrixArrayIsEmpty(matrices.size());
