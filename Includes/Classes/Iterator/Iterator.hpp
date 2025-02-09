@@ -12,6 +12,7 @@ private:
    *
    * @param it O segundo iterador de comparação
    * @param comp Operação de comparação
+   * @throws DifferentColsException se o número de colunas for diferente
    */
   template <typename Comp> bool compareRows(const Iterator &it, Comp comp) {
     ValidationUtils::verifyDifferentCol(pointer->getCol(),
@@ -25,6 +26,7 @@ private:
    *
    * @param it O segundo iterador de comparação
    * @param comp Operação de comparação
+   * @throws DifferentRowsException se o número de linhas for diferente
    */
   template <typename Comp> bool compareCols(const Iterator &it, Comp comp) {
     ValidationUtils::verifyDifferentRow(pointer->getRow(),
@@ -81,6 +83,8 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
+   * 
+   * @throws DifferentColsException se o número de colunas for diferente
    **/
   bool isRowBigger(const Iterator &it);
 
@@ -89,6 +93,8 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
+   * 
+   * @throws DifferentColsException se o número de colunas for diferente
    */
   bool isRowSmaller(const Iterator &it);
 
@@ -97,13 +103,17 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
+   * 
+   * @throws DifferentRowsException se o número de linhas for diferente
    */
   bool isColBigger(const Iterator &it);
   /**
    * @brief Verifica se o índice da coluna atual é menor do que a de outro
    * iterador
    *
-   * @param it O segundo iterador de comparação
+   * @param it O segundo iterador de comparação\
+   * 
+   * @throws DifferentRowsException se o número de linhas for diferente
    */
   bool isColSmaller(const Iterator &it);
 

@@ -17,6 +17,8 @@
  * 
  * @param prompt A mensagem pegruntando o que se quer do usuário
  * @param validations Uma série de validações que indicarão se a resposta dada é válida
+ * 
+ * @throws InvalidArgumentException Se o usuário digitar algo inválido
  */
 int getValidNumber(const std::string &prompt, const IntValidatorArray validations);
 

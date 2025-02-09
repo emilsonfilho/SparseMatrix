@@ -18,6 +18,8 @@ public:
    * @brief Métooo de execução
    *
    * @param context Contexto do comando
+   * 
+   * @throw FileIOException Se o arquivo não puder ser aberto
    */
   void execute(ContextCommand *context) const override;
 };

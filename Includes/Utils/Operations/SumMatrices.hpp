@@ -9,6 +9,8 @@
  * @param matricesA Matriz A
  * @param matricesB Matriz B
  * @return SparseMatrix* Matriz resultante
+ * 
+ * @throws InvalidMatrixOperationException se as matrizes não forem somáveis
  */
 SparseMatrix *SumMatrix(SparseMatrix *matricesA, SparseMatrix *matricesB);
 

@@ -11,6 +11,8 @@
  * 
  * @param NameFile Nome do arquivo
  * @param matrices Matrizes lidas
+ * 
+ * @throw FileIOException Se o arquivo não puder ser aberto
  */
 void ReadMatrices(const std::string &NameFile, SparseMatrix *&matrices);
 

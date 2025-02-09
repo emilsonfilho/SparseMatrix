@@ -20,6 +20,8 @@ public:
      * @brief Método de execução
      * 
      * @param context Contexto do comando
+     * 
+     * @throws InvalidMatrixOperationException Se as matrizes não forem multiplicáveis
      */
     void execute(ContextCommand *context) const override;
 };

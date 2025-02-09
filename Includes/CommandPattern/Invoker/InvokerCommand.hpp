@@ -26,6 +26,8 @@ public:
    * @brief Executa o comando especificado pelo nome
    *
    * @param commandName Nome do comando a ser executado
+   * 
+   * @throws InvalidCommandException se o comando não for encontrado
    */
   void executeCommand(const std::string &commandName);
   /**
