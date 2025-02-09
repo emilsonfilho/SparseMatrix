@@ -2,7 +2,6 @@
 #define DIFFERENT_COLS_HPP
 
 #include <stdexcept>
-#include <string>
 
 class DifferentColsException : public std::runtime_error {
 public:

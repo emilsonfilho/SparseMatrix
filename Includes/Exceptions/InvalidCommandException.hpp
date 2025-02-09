@@ -2,7 +2,6 @@
 #define INVALID_COMMAND_EXCEPTION_HPP
 
 #include <stdexcept>
-#include <string>
 
 class InvalidCommandException : public std::runtime_error {
 public:

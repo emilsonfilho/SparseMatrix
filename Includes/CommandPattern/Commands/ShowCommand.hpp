@@ -1,8 +1,6 @@
 #ifndef SHOW_COMMAND_HPP
 #define SHOW_COMMAND_HPP
 
-#include <iostream>
-
 #include "Command.hpp"
 #include "../Contexts/ShowContextCommand.hpp"
 

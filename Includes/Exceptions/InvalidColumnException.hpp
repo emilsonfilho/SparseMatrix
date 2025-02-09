@@ -2,7 +2,6 @@
 #define INVALID_COLUMN_EXCEPTION_HPP
 
 #include <stdexcept>
-#include <string>
 
 class InvalidColumnException : public std::runtime_error {
 public:

@@ -1,8 +1,6 @@
 #ifndef MULTIPLY_CONTEXT_COMMAND_HPP
 #define MULTIPLY_CONTEXT_COMMAND_HPP
 
-#include <vector>
-
 #include "../../../Defs/MatrixInfoVectorRef.hpp"
 #include "ContextCommand.hpp"
 

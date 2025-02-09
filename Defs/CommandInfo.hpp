@@ -4,7 +4,6 @@
 #include <functional>
 
 #include "../Includes/CommandPattern/Commands/Command.hpp"
-#include "../Includes/CommandPattern/Contexts/ContextCommand.hpp"
 
 struct CommandInfo {
   Command *command;

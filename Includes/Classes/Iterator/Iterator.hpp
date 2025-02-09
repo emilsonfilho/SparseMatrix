@@ -2,7 +2,6 @@
 #define ITERATOR_HPP
 
 #include "../../Utils/Validation/Validation.hpp"
-#include "../Node/Node.hpp"
 
 class Iterator {
 private:

@@ -1,5 +1,4 @@
 #include "../../../Includes/Utils/Operations/SumMatrices.hpp"
-#include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
 
 SparseMatrix *SumMatrix(SparseMatrix* matrixA, SparseMatrix* matrixB) {
     ValidationUtils::verifyMatricesAreSummable(matrixA->getNumRows(), matrixA->getNumCols(), matrixB->getNumRows(), matrixB->getNumCols());

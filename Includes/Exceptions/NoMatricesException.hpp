@@ -2,7 +2,6 @@
 #define NO_MATRICES_EXCEPTION_HPP
 
 #include <stdexcept>
-#include <string>
 
 class NoMatricesException : public std::logic_error {
 public:

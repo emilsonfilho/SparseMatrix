@@ -1,16 +1,10 @@
 #ifndef READMATRICES_HPP
 #define READMATRICES_HPP
 
-
-#include "../../../Includes/Classes/SparseMatrix/SparseMatrix.hpp"
-#include "../../../Includes/Utils/Operations/ReadMatrices.hpp"
-#include "../../../Defs/MatrixPtrArrayRef.hpp"
-#include "../../../Defs/Path.hpp"
-
-#include <string>
 #include <fstream>
-#include <iostream>
-#include <sstream>
+
+#include "../../Classes/SparseMatrix/SparseMatrix.hpp"
+#include "../../../Defs/Path.hpp"
 
 void ReadMatrices(const std::string &NameFile, SparseMatrix *&matrices);
 

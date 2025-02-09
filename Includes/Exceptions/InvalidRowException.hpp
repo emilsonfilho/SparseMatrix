@@ -2,7 +2,6 @@
 #define INVALID_ROW_EXCEPTION_HPP
 
 #include <stdexcept>
-#include <string>
 
 class InvalidRowException : public std::runtime_error {
 public:

@@ -1,12 +1,6 @@
 #ifndef INVOKER_HPP
 #define INVOKER_HPP
 
-#include <iostream>
-#include <string>
-#include <unordered_map>
-
-#include "../../../Defs/CommandInfo.hpp"
-#include "../../../Defs/UnorderedMapCommand.hpp"
 #include "../../../Includes/Messages/Messages.hpp"
 #include "../../Exceptions/InvalidCommandException.hpp"
 #include "../Commands/HelpCommand.hpp"

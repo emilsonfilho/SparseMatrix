@@ -1,7 +1,7 @@
 #ifndef READ_MATRIX_COMMAND_HPP
 #define READ_MATRIX_COMMAND_HPP
 
-#include "../../../Includes/CommandPattern/Contexts/ReadMatrixContextCommand.hpp"
+#include "../../CommandPattern/Contexts/ReadMatrixContextCommand.hpp"
 #include "Command.hpp"
 
 class ReadMatrixCommand : public Command {

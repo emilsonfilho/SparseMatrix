@@ -1,8 +1,7 @@
 #ifndef SUM_MATRIX_COMMAND_HPP
 #define SUM_MATRIX_COMMAND_HPP
 
-#include "../../../Includes/CommandPattern/Contexts/SumMatrixContextCommand.hpp"
-#include "../../Utils/Operations/SumMatrices.hpp"
+#include "../../CommandPattern/Contexts/SumMatrixContextCommand.hpp"
 #include "../../Utils/Complements/FormatOperationOrigin.hpp"
 #include "Command.hpp"
 

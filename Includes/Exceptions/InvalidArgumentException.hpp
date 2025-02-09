@@ -2,7 +2,6 @@
 #define INVALID_ARGUMENT_EXCEPTION_HPP
 
 #include <stdexcept>
-#include <string>
 
 class InvalidArgumentException : public std::invalid_argument {
 public:
