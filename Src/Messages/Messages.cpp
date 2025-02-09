@@ -78,7 +78,7 @@ std::string noFilesMessage() {
 }
 
 std::string fileNotFoundMessage() {
-  return "Arquivo nao encontrado. Certifique-se de colocar a extensao do arquivo";
+  return "Arquivo nao encontrado. Certifique-se de colocar apenas o nome do arquivo sem sua extensão.";
 }
 
 std::string notMultipliableMatrices() {
