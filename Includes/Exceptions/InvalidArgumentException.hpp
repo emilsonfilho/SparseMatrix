@@ -8,7 +8,7 @@ public:
   /**
    * @brief Cria uma exceção de argumento inválido
    *
-   @param message Mensagema a ser exibida
+   * @param message Mensagema a ser exibida
    */
   explicit InvalidArgumentException(const std::string &message);
 };

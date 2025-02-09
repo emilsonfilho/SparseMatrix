@@ -3,6 +3,13 @@
 
 #include "../../Classes/SparseMatrix/SparseMatrix.hpp"
 
+/**
+ * @brief Multiplica duas matrizes esparsas
+ * 
+ * @param matrixA Matriz A
+ * @param matrixB Matriz B
+ * @return SparseMatrix* Matriz resultante
+ */
 SparseMatrix *multiply(SparseMatrix *matrixA, SparseMatrix *matrixB);
 
 #endif

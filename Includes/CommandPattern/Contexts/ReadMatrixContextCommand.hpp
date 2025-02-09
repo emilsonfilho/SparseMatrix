@@ -18,8 +18,6 @@ public:
    * @param matrix Vetor com as matrizes do sistema
    */
   ReadMatrixContextCommand(const std::string &nameMatriz, MatrixInfoVectorRef matrices);
-
-  //ReadMatrixContextCommand(std::string caminho);
 };
 
 #endif 

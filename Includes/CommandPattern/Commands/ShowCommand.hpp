@@ -16,6 +16,11 @@ public:
      */
     ShowCommand(const std::string &name, const std::string &description);
 
+    /**
+     * @brief Executa o comando de mostrar as matrizes disponíveis na tela
+     * 
+     * @param context Contexto do comando
+     */
     void execute(ContextCommand *context) const override;
 };
 

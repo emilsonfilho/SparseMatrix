@@ -13,6 +13,11 @@ private:
   int numCols;
 
 public:
+  /**
+   * @brief Construtor padrão de uma matriz esparsa
+   *
+   * Inicializa a matriz com 0 linhas e 0 colunas
+   */
   SparseMatrix() = default;
 
   /**

@@ -14,9 +14,9 @@ public:
   /**
    * @brief Construtor do contexto para abrir arquiivo texto
    *
-   * @param Matrices 
-   * @param indexMatrixA
-   * @param indexMatrixB
+   * @param Matrices Matrizes no sistema
+   * @param indexMatrixA Índice da primeira matriz
+   * @param indexMatrixB Índice da segunda matriz
    */
   SumMatrixContextCommand(MatrixInfoVectorRef matrices, int indexMatrixA, int indexMatrixB);
 };
