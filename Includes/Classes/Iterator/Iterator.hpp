@@ -83,7 +83,7 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
-   * 
+   *
    * @throws DifferentColsException se o número de colunas for diferente
    **/
   bool isRowBigger(const Iterator &it);
@@ -93,7 +93,7 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
-   * 
+   *
    * @throws DifferentColsException se o número de colunas for diferente
    */
   bool isRowSmaller(const Iterator &it);
@@ -103,7 +103,7 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação
-   * 
+   *
    * @throws DifferentRowsException se o número de linhas for diferente
    */
   bool isColBigger(const Iterator &it);
@@ -112,7 +112,7 @@ public:
    * iterador
    *
    * @param it O segundo iterador de comparação\
-   * 
+   *
    * @throws DifferentRowsException se o número de linhas for diferente
    */
   bool isColSmaller(const Iterator &it);

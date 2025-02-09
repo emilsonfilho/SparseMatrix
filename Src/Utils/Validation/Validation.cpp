@@ -82,7 +82,8 @@ void verifyIfMatrixArrayIsEmpty(int size) {
 
 void verifyIfThereAreFiles() {
   for (const auto &entry : std::filesystem::directory_iterator("Files")) {
-    if (std::filesystem::is_regular_file(entry)) { // Verifica se é um arquivo (não uma subpasta)
+    if (std::filesystem::is_regular_file(
+            entry)) { // Verifica se é um arquivo (não uma subpasta)
       return;
     }
   }

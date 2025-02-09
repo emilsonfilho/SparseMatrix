@@ -78,72 +78,79 @@ double SparseMatrix::getElement(int row, int col) const {
   // Node porque é melhor de se obter o índice
   Iterator it(head);
 
- /*
+  /*
    * A lista utilizada é circular e possui nós sentinelas, garantindo que:
-   * - getPointer() nunca retorna nullptr, a menos que o Iterator tenha sido configurado para isso.
+   * - getPointer() nunca retorna nullptr, a menos que o Iterator tenha sido
+   * configurado para isso.
    * - getNext() sempre retorna um endereço válido, evitando acessos inválidos.
    * - Índices zero nunca são válidos, pois são reservados para nós sentinelas.
-   * Portanto, não há risco de loops infinitos ou acessos inválidos nesta implementação.
+   * Portanto, não há risco de loops infinitos ou acessos inválidos nesta
+   * implementação.
    */
 
   // Percorrendo as linhas até chegar onde eu quero
-  while (it.getPointer()->getRow() != row) it.nextInCol();
+  while (it.getPointer()->getRow() != row)
+    it.nextInCol();
 
   while (it.getPointer()->getCol() < col) {
-    if (it.getPointer()->getNext()->getCol() == 0) return 0;
+    if (it.getPointer()->getNext()->getCol() == 0)
+      return 0;
     it.nextInRow();
   }
-  
-  // Se a coluna for maior do que a gente quer, é porque não existe aquele elemento e existe um que é depois dele
-  if (it.getPointer()->getCol() > col) return 0;
-    
+
+  // Se a coluna for maior do que a gente quer, é porque não existe aquele
+  // elemento e existe um que é depois dele
+  if (it.getPointer()->getCol() > col)
+    return 0;
+
   return *it;
 }
 
 void SparseMatrix::InsertMatriz(int row, int col, double value) {
-    ValidationUtils::verifyValidIndexes(row, col, numRows, numCols);
+  ValidationUtils::verifyValidIndexes(row, col, numRows, numCols);
 
-    if (value == 0) return;
-    
-    Node *rowSentinela = head->getDown();
-    while (rowSentinela->getRow() != row) {
-        rowSentinela = rowSentinela->getDown();
-    }
+  if (value == 0)
+    return;
 
-    Node *colSentinela = head->getNext();
-    while (colSentinela->getCol() != col) {
-        colSentinela = colSentinela->getNext();
-    }
+  Node *rowSentinela = head->getDown();
+  while (rowSentinela->getRow() != row) {
+    rowSentinela = rowSentinela->getDown();
+  }
 
-    Node *prevRow = rowSentinela;
-    Node *currentRow = rowSentinela->getNext();
-    while (currentRow != rowSentinela && currentRow->getCol() < col) {
-        prevRow = currentRow;
-        currentRow = currentRow->getNext();
-    }
+  Node *colSentinela = head->getNext();
+  while (colSentinela->getCol() != col) {
+    colSentinela = colSentinela->getNext();
+  }
 
-    Node *prevCol = colSentinela;
-    Node *currentCol = colSentinela->getDown();
-    while (currentCol != colSentinela && currentCol->getRow() < row) {
-        prevCol = currentCol;
-        currentCol = currentCol->getDown();
-    }
-    
-    if (currentRow != rowSentinela && currentRow->getCol() == col) {
-        currentRow->setValue(value);
-        return;
-    }
+  Node *prevRow = rowSentinela;
+  Node *currentRow = rowSentinela->getNext();
+  while (currentRow != rowSentinela && currentRow->getCol() < col) {
+    prevRow = currentRow;
+    currentRow = currentRow->getNext();
+  }
 
-    // Criando o novo nó
-    Node *novo = new Node(row, col, value, nullptr, nullptr);
+  Node *prevCol = colSentinela;
+  Node *currentCol = colSentinela->getDown();
+  while (currentCol != colSentinela && currentCol->getRow() < row) {
+    prevCol = currentCol;
+    currentCol = currentCol->getDown();
+  }
 
-    // Inserindo na linha
-    prevRow->setNext(novo);
-    novo->setNext(currentRow);
+  if (currentRow != rowSentinela && currentRow->getCol() == col) {
+    currentRow->setValue(value);
+    return;
+  }
 
-    // Inserindo na coluna
-    prevCol->setDown(novo);
-    novo->setDown(currentCol);
+  // Criando o novo nó
+  Node *novo = new Node(row, col, value, nullptr, nullptr);
+
+  // Inserindo na linha
+  prevRow->setNext(novo);
+  novo->setNext(currentRow);
+
+  // Inserindo na coluna
+  prevCol->setDown(novo);
+  novo->setDown(currentCol);
 }
 
 SparseMatrix::~SparseMatrix() {

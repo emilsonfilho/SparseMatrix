@@ -1,8 +1,8 @@
 #ifndef SPARSE_MATRIX_HPP
 #define SPARSE_MATRIX_HPP
 
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 #include "../Iterator/Iterator.hpp"
 
@@ -35,14 +35,15 @@ public:
    *
    * @note A desalocação de memória será efetuada em uma função diferente desta.
    * Aqui, serão colocados apenas as alocações dos nós sentinelas
-   * 
-   * @throws InvalidRowException e InvalidColumnException caso o número de linhas ou colunas seja inválido
+   *
+   * @throws InvalidRowException e InvalidColumnException caso o número de
+   * linhas ou colunas seja inválido
    */
   SparseMatrix(int numRows, int numCols);
 
   /**
    * @brief Exibe a matrix no terminal
-   * 
+   *
    * @note Complexidade O(n * m)
    */
   void print();
@@ -66,12 +67,12 @@ public:
 
   /**
    * @brief Pega um elemento de dentro da matri. Se não existir, retorna zero
-   * 
+   *
    * @param row Linha do elemento a ser pego
    * @param col Coluna do elemento a ser pego
-   * 
+   *
    * @note Complexidade O(n)
-   * 
+   *
    * @throws InvalidRowException se a linha for inválida
    * @throws InvalidColumnException se a coluna for inválida
    * @throws ArgumentOutOfRangeException se o índice for negativo
@@ -80,13 +81,13 @@ public:
 
   /**
    * @brief Insere um elemento na matriz
-   * 
+   *
    * @param row Linha do elemento a ser inserido
    * @param col Coluna do elemento a ser inserido
    * @param value Valor do elemento a ser inserido
-   * 
+   *
    * @note Complexidade O(n+m)
-   * 
+   *
    * @throws InvalidRowException se a linha for inválida
    * @throws InvalidColumnException se a coluna for inválida
    * @throws ArgumentOutOfRangeException se o índice for negativo

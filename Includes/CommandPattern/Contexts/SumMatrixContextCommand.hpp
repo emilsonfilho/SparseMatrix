@@ -2,8 +2,8 @@
 #define SUM_MATRIX_CONTEXT_COMMAND_HPP
 
 #include "../../../Defs/MatrixInfoVectorRef.hpp"
-#include "ContextCommand.hpp"
 #include "../../Utils/Operations/SumMatrices.hpp"
+#include "ContextCommand.hpp"
 
 class SumMatrixContextCommand : public ContextCommand {
 public:
@@ -18,8 +18,8 @@ public:
    * @param indexMatrixA Índice da primeira matriz
    * @param indexMatrixB Índice da segunda matriz
    */
-  SumMatrixContextCommand(MatrixInfoVectorRef matrices, int indexMatrixA, int indexMatrixB);
+  SumMatrixContextCommand(MatrixInfoVectorRef matrices, int indexMatrixA,
+                          int indexMatrixB);
 };
 
-#endif 
-
+#endif

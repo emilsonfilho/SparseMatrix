@@ -5,12 +5,12 @@
 
 class FileIOException : public std::runtime_error {
 public:
-    /**
-     * @brief Exceção para falha ao abrir o arquivo
-     * 
-     * @oaram message Mensagem a ser exibida
-     */
-    explicit FileIOException(const std::string& message);
+  /**
+   * @brief Exceção para falha ao abrir o arquivo
+   *
+   * @oaram message Mensagem a ser exibida
+   */
+  explicit FileIOException(const std::string &message);
 };
 
 #endif

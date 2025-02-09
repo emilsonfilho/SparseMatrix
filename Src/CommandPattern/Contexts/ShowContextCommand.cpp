@@ -1,3 +1,4 @@
 #include "../../../Includes/CommandPattern/Contexts/ShowContextCommand.hpp"
 
-ShowContextCommand::ShowContextCommand(const MatrixInfoVectorRef system): system(system) {}
+ShowContextCommand::ShowContextCommand(const MatrixInfoVectorRef system)
+    : system(system) {}

@@ -37,7 +37,8 @@ std::string invalidArgumentForNumber() {
   return "Entrada invalida. Por favor, digite um numero valido";
 }
 
-std::string outOfBoundsMessage(int number, const std::string &context, const std::string &structure) {
+std::string outOfBoundsMessage(int number, const std::string &context,
+                               const std::string &structure) {
   std::ostringstream os;
   os << context << ' ' << number << " esta fora dos limites d" << structure;
   return os.str();
@@ -70,7 +71,8 @@ std::string differentRowsMessage() {
 }
 
 std::string emptyMatricesArrayMessage() {
-  return "Nao existe nenhuma matriz no nosso sistema para efetuar essa operacao. Considere criar uma primeiro";
+  return "Nao existe nenhuma matriz no nosso sistema para efetuar essa "
+         "operacao. Considere criar uma primeiro";
 }
 
 std::string noFilesMessage() {
@@ -78,18 +80,22 @@ std::string noFilesMessage() {
 }
 
 std::string fileNotFoundMessage() {
-  return "Arquivo nao encontrado. Certifique-se de colocar apenas o nome do arquivo sem sua extensão.";
+  return "Arquivo nao encontrado. Certifique-se de colocar apenas o nome do "
+         "arquivo sem sua extensão.";
 }
 
 std::string notMultipliableMatrices() {
-  return "As matrizes não podem ser multiplicadas: o número de colunas da primeira matriz não corresponde ao número de linhas da segunda matriz.";
+  return "As matrizes não podem ser multiplicadas: o número de colunas da "
+         "primeira matriz não corresponde ao número de linhas da segunda "
+         "matriz.";
 }
 
 std::string notSummableMatrices() {
-  return "As matrizes não podem ser somadas: as matrizes possuem dimensões diferentes.";
+  return "As matrizes não podem ser somadas: as matrizes possuem dimensões "
+         "diferentes.";
 }
 
-std::string fileOpenErrorMessage(const std::string& filename) {
+std::string fileOpenErrorMessage(const std::string &filename) {
   std::ostringstream os;
   os << "Erro ao abrir o arquivo: " << filename;
   return os.str();

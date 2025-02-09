@@ -6,14 +6,14 @@
 
 class ShowContextCommand : public ContextCommand {
 public:
-    MatrixInfoVectorRef system;
+  MatrixInfoVectorRef system;
 
-    /**
-     * @brief Construtor do comando de mostrar matrizes no sistema
-     * 
-     * @param system Matrizes no sistema
-     */
-    ShowContextCommand(const MatrixInfoVectorRef system);
+  /**
+   * @brief Construtor do comando de mostrar matrizes no sistema
+   *
+   * @param system Matrizes no sistema
+   */
+  ShowContextCommand(const MatrixInfoVectorRef system);
 };
 
 #endif
