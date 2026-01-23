@@ -40,7 +40,7 @@ O projeto conta com um `Makefile` para facilitar a compilação.
 ### Passos
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/emilsonfilho/sparsematrix.git](https://github.com/emilsonfilho/sparsematrix.git)
+    git clone https://github.com/emilsonfilho/sparsematrix.git
     cd sparsematrix
     ```
 
